@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/layout"
+        android:layout_width="fill_parent"
+        android:layout_height="40.0dip"
+        android:layout_marginTop="25.0dip">
+
+        <TextView
+           android:id="@+id/tv_my_kc"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:paddingLeft="10.0dip"
+            android:paddingRight="12.0dip"
+            android:text="我的课程"
+            android:textColor="@color/color_343434"
+            android:textSize="12.0dip" />
+
+        <!--            app:tabTextAppearance="@style/TabLayoutStyle"-->
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab"
+            android:layout_width="200.0dip"
+            android:layout_height="40.0dip"
+            android:layout_centerHorizontal="true"
+            app:tabBackground="@color/white"
+            app:tabIndicatorColor="#ff568cf4"
+            app:tabIndicatorHeight="2.0dip"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="#ff568cf4"
+            app:tabTextColor="@color/color_343434" />
+    </RelativeLayout>
+
+    <View style="@style/style_view_all" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/layout" />
+</LinearLayout>

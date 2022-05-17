@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/item_top_return" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="100.0dip"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="24.0dip"
+                android:layout_marginBottom="24.0dip"
+                android:adjustViewBounds="true"
+                android:scaleType="center"
+                android:src="@mipmap/about_logo" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13.0dip"
+                android:layout_marginRight="13.0dip"
+                android:lineSpacingExtra="8.0dip"
+                android:paddingBottom="20.0dip"
+                android:text="@string/string_about"
+                android:textColor="#ff333333"
+                android:textSize="13.0dip" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_weight="1.0"
+            android:background="#ffefefef">
+
+            <LinearLayout
+                android:id="@+id/ll_phone"
+                android:layout_width="fill_parent"
+                android:layout_height="40.0dip"
+                android:layout_marginTop="10.0dip"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="center|left"
+                    android:paddingLeft="20.0dip"
+                    android:text="联系我们"
+                    android:textColor="#ff666666"
+                    android:textSize="14.0dip" />
+
+                <TextView
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="center|right"
+                    android:paddingRight="20.0dip"
+                    android:text="025-83692169"
+                    android:textColor="#ff333333"
+                    android:textSize="14.0dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="34.0dip"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/about_version"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="5.0dip"
+                    android:text="银行易考 V1.0"
+                    android:textColor="#fffc7655"
+                    android:textSize="16.0dip"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="5.0dip"
+                    android:text="南京东吴教育咨询有限公司"
+                    android:textColor="#ff999999"
+                    android:textSize="12.0dip" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="1.0dip"
+                    android:text="www.dwjy.com"
+                    android:textColor="#ff999999"
+                    android:textSize="12.0dip" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

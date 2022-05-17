@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_exam_back"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+      android:id="@+id/rl_options"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20.0dip"
+        android:layout_marginRight="20.0dip"
+        android:background="@drawable/drawable_exam_option"
+        android:minHeight="40.0dip">
+
+        <LinearLayout
+            android:id="@+id/ll_options"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text_options_index"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:text="A"
+                android:textColor="@color/color_exam_option"
+                android:textSize="14.0sp" />
+
+            <com.udit.frame.common.texthtml.HtmlTextView
+                android:id="@+id/text_options"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="3.0"
+                android:gravity="center|left"
+                android:lineSpacingExtra="5.0dip"
+                android:paddingTop="3.0dip"
+                android:text="25"
+                android:textColor="@color/color_exam_option"
+                android:textSize="14.0sp" />
+        </LinearLayout>
+
+        <ImageView
+           android:id="@+id/img_option_jg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:src="@mipmap/subject_icon_right" />
+    </RelativeLayout>
+</LinearLayout>

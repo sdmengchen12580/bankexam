@@ -1,0 +1,43 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '28.0.3'
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 26
+    }
+    useLibrary 'org.apache.http.legacy'
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    api 'com.android.support:appcompat-v7:26.0.0'
+    api 'com.android.support.constraint:constraint-layout:1.0.2'
+    api 'com.android.support:design:26.0.0'
+    testImplementation 'junit:junit:4.12'
+    api files('libs/gson-1.6.jar')
+    api files('libs/zxing.jar')
+    api files('libs/universal-image-loader-1.9.3-SNAPSHOT.jar')
+    api files('libs/badgeview.jar')
+    api files('libs/android-logging-log4j-1.0.3.jar')
+    api files('libs/log4j-1.2.17.jar')
+    api files('libs/xUtils-2.6.14.jar')
+    //沉浸式
+    api('com.jaeger.statusbarutil:library:1.5.1') {
+        exclude group: 'com.android.support', module: 'support-v4'
+    }
+}

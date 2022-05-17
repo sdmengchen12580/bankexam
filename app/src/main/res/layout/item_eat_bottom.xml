@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item"
+    android:layout_width="85dp"
+    android:layout_height="50dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_line"
+        android:layout_width="65dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/shape_15_corner_558cf4_bg"
+        android:gravity="center"
+        android:text="分类"
+        android:textColor="@color/white"
+        android:textSize="14dp" />
+
+</RelativeLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:minHeight="60.0dip"
+    android:orientation="vertical"
+    android:padding="10.0dip">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:orientation="horizontal">
+
+        <com.udit.frame.common.circleImageView.CircleImageView
+           android:id="@+id/image_teacher_pic"
+            android:layout_width="50.0dip"
+            android:layout_height="50.0dip"
+            android:src="@mipmap/demo" />
+
+        <TextView
+        android:id="@+id/textview_teacher_name"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10.0dip"
+            android:gravity="center_vertical"
+            android:textColor="@color/color_text_zb_info"
+            android:textSize="12.0sp" />
+    </LinearLayout>
+
+    <WebView
+       android:id="@+id/webview_teacher_resume"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:scrollbars="none" />
+</LinearLayout>

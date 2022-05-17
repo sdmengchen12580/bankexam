@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/ll_item_exam"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:maxHeight="120.0dip"
+    android:minHeight="40.0dip"
+    android:orientation="vertical"
+    android:padding="4.0dip">
+
+    <com.udit.frame.common.texthtml.HtmlTextView
+    android:id="@+id/text_sreach_exam_title"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="5.0dip"
+        android:textColor="@color/color_444444"
+        android:textSize="14.0sp" />
+
+    <TextView
+       android:id="@+id/text_sreach_exam_laiyuan"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0"
+        android:gravity="center_vertical"
+        android:textColor="@color/color_444444"
+        android:textSize="12.0sp" />
+</LinearLayout>

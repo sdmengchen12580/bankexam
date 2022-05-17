@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/item_top_return_kecheng_view" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="50.0dip"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="5.0"
+                android:orientation="vertical"
+                android:paddingLeft="10.0dip">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="49.0dip"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textview_zhibo_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="通用就业能力测试"
+                        android:textColor="@color/color_exam_node_title"
+                        android:textSize="16.0dip"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="22.0dip"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="12.0dip"
+                        android:layout_height="15.0dip"
+                        android:paddingTop="2.0dip"
+                        android:paddingBottom="1.0dip"
+                        android:src="@mipmap/img_clock" />
+
+                    <TextView
+                        android:id="@+id/textview_zhibo_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="16.0dip"
+                        android:layout_marginLeft="6.0dip"
+                        android:gravity="center_vertical"
+                        android:text="2017.03.18-2017.04.17"
+                        android:textColor="@color/color_666666"
+                        android:textSize="12.0dip" />
+
+                    <TextView
+                        android:id="@+id/textview_zhibo_kecheng"
+                        style="@style/style_item_zb_info_2"
+                        android:layout_marginLeft="3.0dip"
+                        android:text="(50讲)" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="27.0dip"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="12.0dip"
+                        android:layout_height="15.0dip"
+                        android:paddingTop="2.0dip"
+                        android:paddingBottom="1.0dip"
+                        android:src="@mipmap/img_clock" />
+
+                    <TextView
+                        android:id="@+id/textview_zhibo_goumairenshu"
+                        style="@style/style_item_zl_botton_text"
+                        android:layout_height="16.0dip"
+                        android:layout_marginLeft="6.0dip"
+                        android:gravity="center_vertical"
+                        android:text="0"
+                        android:textColor="#ff666666"
+                        android:textSize="12.0dip" />
+
+                    <TextView
+                        style="@style/style_item_zl_botton_text"
+                        android:layout_height="16.0dip"
+                        android:gravity="center_vertical"
+                        android:text="人已购"
+                        android:textColor="#ff666666"
+                        android:textSize="12.0dip" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="1.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="15.0dip"
+                android:layout_marginBottom="15.0dip"
+                android:background="@color/color_back" />
+
+            <LinearLayout
+                android:id="@+id/ll_zhibi_shoucang"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/image_shoucang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="center"
+                    android:src="@mipmap/zhibo_detail_icon_collect" />
+
+                <TextView
+                    android:id="@+id/textview_shoucang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5.0dip"
+                    android:text="收藏"
+                    android:textColor="@color/color_shoucang"
+                    android:textSize="12.0sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View style="@style/style_view_all" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="40.0dip"
+            android:orientation="horizontal"
+            android:paddingLeft="20.0dip"
+            android:paddingRight="20.0dip">
+
+            <RelativeLayout
+                android:layout_width="70.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="45.0dip"
+                android:layout_toLeftOf="@+id/layout_center">
+
+                <TextView
+                    android:id="@+id/radiobutton_jieshao"
+                    android:layout_width="70.0dip"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="课程介绍"
+                    android:textColor="#ff333333"
+                    android:textSize="15.0dip" />
+
+                <TextView
+                    android:id="@+id/tv_left"
+                    android:layout_width="23.0dip"
+                    android:layout_height="2.0dip"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#ff558cf4" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_center"
+                android:layout_width="70.0dip"
+                android:layout_height="fill_parent"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/radiobutton_kechengbiao"
+                    android:layout_width="70.0dip"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="课程表"
+                    android:textColor="#ff666666"
+                    android:textSize="15.0dip" />
+
+                <TextView
+                    android:id="@+id/tv_center"
+                    android:layout_width="23.0dip"
+                    android:layout_height="2.0dip"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#ff558cf4"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="70.0dip"
+                android:layout_height="fill_parent"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="45.0dip"
+                android:layout_toRightOf="@+id/layout_center">
+
+                <TextView
+                    android:id="@+id/radiobutton_teacher"
+                    android:layout_width="70.0dip"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="老师介绍"
+                    android:textColor="#ff666666"
+                    android:textSize="15.0dip" />
+
+                <TextView
+                    android:id="@+id/tv_right"
+                    android:layout_width="23.0dip"
+                    android:layout_height="2.0dip"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="#ff558cf4"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="10.0dip"
+        android:background="#ffefefef" />
+
+    <FrameLayout
+        android:id="@+id/fragmen_zhibo_info"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_marginTop="10.0dip"
+        android:layout_marginBottom="3.0dip"
+        android:layout_weight="3.0"
+        android:background="@color/white" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dip"
+        android:background="@color/color_back" />
+
+    <LinearLayout
+        android:id="@+id/ll_zhifu_price"
+        android:layout_width="fill_parent"
+        android:layout_height="53.0dip"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:paddingTop="5.0dip"
+                android:text="¥"
+                android:textColor="@color/color_price"
+                android:textSize="13.0dip" />
+
+            <TextView
+                android:id="@+id/textview_zhibo_price"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="0.00"
+                android:textColor="@color/color_price"
+                android:textSize="20.0dip"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="3.0"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_gravity="left"
+                android:layout_weight="1.0"
+                android:gravity="left"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/style_item_zl_botton_text"
+                    android:layout_height="fill_parent"
+                    android:gravity="center_vertical"
+                    android:text="停售时间还有"
+                    android:textColor="#ff93a5b5"
+                    android:textSize="12.0sp" />
+
+                <TextView
+                    android:id="@+id/textview_zhibo_tinshou"
+                    style="@style/style_item_zl_botton_text"
+                    android:layout_height="fill_parent"
+                    android:gravity="center_vertical"
+                    android:text="5天"
+                    android:textColor="@color/color_price"
+                    android:textSize="12.0sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textview_goumai"
+            android:layout_width="130.0dip"
+            android:layout_height="30.0dip"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="8.0dip"
+            android:background="@drawable/shape_15_corner_558cf4_bg"
+            android:gravity="center"
+            android:text="立即购买"
+            android:textColor="@color/white"
+            android:textSize="15.0dip"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

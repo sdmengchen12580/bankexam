@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+    <LinearLayout
+        android:layout_width="304dp"
+        android:layout_height="162dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/shape_15_conrner_solid_ffffff"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="6dp"
+            android:gravity="center"
+            android:text="温馨提示"
+            android:textColor="#333333"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_xy_content"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+            android:lineSpacingExtra="3dp"
+            android:text="账户注销操作需要联系客服操作，客服电话400-088-0828"
+            android:textColor="#666666"
+            android:textSize="14dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp">
+
+            <TextView
+                android:id="@+id/tv_not_agree"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_4_corner_f7f7f7_bg"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@color/white"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/tv_agree"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_4_corner_blue_bg"
+                android:gravity="center"
+                android:text="联系客服"
+                android:textColor="@color/white"
+                android:textSize="14dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

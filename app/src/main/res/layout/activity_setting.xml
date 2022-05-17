@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/item_top_return" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#ffefefef">
+
+        <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10.0dip"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_yinsi"
+                style="@style/style_me_ll">
+
+                <TextView
+                    style="@style/style_ll_center_text"
+                    android:layout_marginLeft="12.5dip"
+                    android:text="隐私协议" />
+
+                <LinearLayout style="@style/style_ll_right2">
+
+                    <ImageView style="@style/style_ll_right_img1" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View style="@style/style_view_h1" />
+
+            <LinearLayout
+                android:id="@+id/ll_user"
+                style="@style/style_me_ll">
+
+                <TextView
+                    style="@style/style_ll_center_text"
+                    android:layout_marginLeft="12.5dip"
+                    android:text="用户协议" />
+
+                <LinearLayout style="@style/style_ll_right2">
+
+                    <ImageView style="@style/style_ll_right_img1" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View style="@style/style_view_h1" />
+
+            <LinearLayout
+                android:id="@+id/ll_me_qingli"
+                style="@style/style_me_ll">
+
+                <TextView
+                    style="@style/style_ll_center_text"
+                    android:layout_marginLeft="12.5dip"
+                    android:text="缓存清理" />
+
+                <LinearLayout style="@style/style_ll_right2">
+
+                    <ImageView style="@style/style_ll_right_img1" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View style="@style/style_view_h1" />
+
+            <LinearLayout
+                android:id="@+id/ll_me_about"
+                style="@style/style_me_ll">
+
+                <TextView
+                    style="@style/style_ll_center_text"
+                    android:layout_marginLeft="12.5dip"
+                    android:text="关于我们" />
+
+                <LinearLayout style="@style/style_ll_right2">
+
+                    <ImageView style="@style/style_ll_right_img1" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View style="@style/style_view_h1" />
+
+            <LinearLayout
+                android:id="@+id/ll_delect_code"
+                style="@style/style_me_ll">
+
+                <TextView
+                    style="@style/style_ll_center_text"
+                    android:layout_marginLeft="12.5dip"
+                    android:text="注销账号" />
+
+                <LinearLayout style="@style/style_ll_right2">
+
+                    <ImageView style="@style/style_ll_right_img1" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View style="@style/style_view_h1" />
+
+            <LinearLayout
+                android:id="@+id/ll_me_info"
+                style="@style/style_me_ll">
+
+                <TextView
+                    style="@style/style_ll_center_text"
+                    android:layout_marginLeft="12.5dip"
+                    android:text="版本号" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="14.5dp"
+                    android:gravity="center"
+                    android:id="@+id/tv_version"
+                    android:textColor="@color/color_666666"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_login_out"
+            android:layout_width="fill_parent"
+            android:layout_height="40.0dip"
+            android:layout_below="@+id/content"
+            android:layout_marginLeft="15.0dip"
+            android:layout_marginTop="84.0dip"
+            android:layout_marginRight="15.0dip"
+            android:background="@drawable/shape_20_corner_558cf4_bg"
+            android:gravity="center"
+            android:text="退出登录"
+            android:textColor="@color/white"
+            android:textSize="15.0dip" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_back"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <FrameLayout
+            android:id="@+id/fragment_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"/>
+
+        <ImageView
+            android:id="@+id/img_day"
+            android:layout_width="45.5dip"
+            android:layout_height="45.5dip"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="440.0dip"
+            android:layout_marginRight="11.0dip"
+            android:src="@mipmap/img_qd" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <com.udit.bankexam.view.ShadowContainer
+            android:id="@+id/yinying"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            app:containerCornerRadius="4.0dip"
+            app:containerShadowColor="#19dbdbdb"
+            app:deltaX="0.0dip"
+            app:deltaY="3.0dip">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="49.0dip" />
+        </com.udit.bankexam.view.ShadowContainer>
+
+        <RadioGroup
+            android:id="@+id/group_main"
+            android:layout_width="fill_parent"
+            android:layout_height="49.0dip"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radio_main"
+                style="@style/style_home_radio_new"
+                android:checked="true"
+                android:drawableTop="@drawable/radio_main"
+                android:text="首页" />
+
+            <RadioButton
+                android:id="@+id/radio_kechen"
+                style="@style/style_home_radio_new"
+                android:drawableTop="@drawable/radio_kechen"
+                android:text="课程" />
+
+            <RadioButton
+                android:id="@+id/radio_wenda"
+                style="@style/style_home_radio_new"
+                android:drawableTop="@drawable/radio_ques"
+                android:text="问答" />
+
+            <RadioButton
+                android:id="@+id/radio_tuku"
+                style="@style/style_home_radio_new"
+                android:drawableTop="@drawable/radio_tiku"
+                android:text="题库" />
+
+            <RadioButton
+                android:id="@+id/radio_zhibo"
+                style="@style/style_home_radio_new"
+                android:drawableTop="@drawable/radio_zhibo"
+                android:text="直播"
+                android:visibility="gone" />
+
+            <RadioButton
+                android:id="@+id/radio_video"
+                style="@style/style_home_radio_new"
+                android:drawableTop="@drawable/radio_video"
+                android:text="视频"
+                android:visibility="gone" />
+
+            <RadioButton
+                android:id="@+id/radio_zixun"
+                style="@style/style_home_radio_new"
+                android:drawableTop="@drawable/radio_zixun"
+                android:text="资讯"
+                android:visibility="gone" />
+
+            <RadioButton
+                android:id="@+id/radio_me"
+                style="@style/style_home_radio_new"
+                android:drawableTop="@drawable/radio_me"
+                android:text="我的" />
+        </RadioGroup>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".ui.newui.yaoqing.YaoQingActivity">
+
+    <include layout="@layout/item_top_return" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/img_yaoqing_bg" />
+
+        <ImageView
+            android:id="@+id/img_yaoqing"
+            android:src="@mipmap/img_yaoqing_button"
+            android:layout_marginBottom="72dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="54dp" />
+
+        <TextView
+            android:id="@+id/tv_yq_detail"
+            android:text="邀请记录"
+            android:textColor="#558CF4"
+            android:textSize="13dp"
+            android:layout_marginBottom="45dp"
+            android:layout_marginRight="31dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+</LinearLayout>

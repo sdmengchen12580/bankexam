@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/title"
+        layout="@layout/item_top_data_return" />
+
+    <RelativeLayout
+        android:id="@+id/title1"
+        android:layout_width="fill_parent"
+        android:layout_height="140.0dip"
+        android:layout_below="@+id/title">
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="140.0dip"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/img_lx_bg" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12.0dip"
+            android:layout_marginTop="15.0dip"
+            android:text="答题用时："
+            android:textColor="@color/white"
+            android:textSize="12.0dip"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/textview_tishu_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12.5dip"
+            android:layout_toRightOf="@+id/tv_time"
+            android:textColor="@color/white"
+            android:textSize="15.0dip" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="39.0dip"
+            android:text="分数"
+            android:textColor="@color/white"
+            android:textSize="13.0dip" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="60.0dip"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="57.0dip">
+
+            <TextView
+                android:id="@+id/textview_fenshu"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="bottom"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="47.0dip"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:paddingTop="22.0dip"
+                android:text="分"
+                android:textColor="@color/white"
+                android:textSize="21.0dip"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <com.udit.bankexam.view.ShadowContainer
+        android:id="@+id/title2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_marginLeft="23.0dip"
+        android:layout_marginTop="103.0dip"
+        android:layout_marginRight="23.0dip"
+        app:containerCornerRadius="4.0dip"
+        app:containerDeltaLength="12.0dip"
+        app:containerShadowColor="#c8dbdbdb"
+        app:containerShadowRadius="8.0dip"
+        app:deltaX="0.0dip"
+        app:deltaY="4.0dip">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="65.0dip"
+            android:background="@drawable/shape_4_corner_white_bg"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="20.0dip"
+                android:layout_weight="1.0"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.0dip"
+                    android:layout_weight="1.0"
+                    android:gravity="bottom|center"
+                    android:paddingBottom="3.0dip"
+                    android:text="总分"
+                    android:textColor="@color/color_9999999"
+                    android:textSize="12.0dip" />
+
+                <TextView
+                    android:id="@+id/textview_total_fenshu"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.0dip"
+                    android:layout_weight="1.0"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="3.0dip"
+                    android:text="0"
+                    android:textColor="@color/color_333333"
+                    android:textSize="15.0dip"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="20.0dip"
+                android:layout_weight="1.0"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.0dip"
+                    android:layout_weight="1.0"
+                    android:gravity="bottom|center"
+                    android:paddingBottom="3.0dip"
+                    android:text="全站最高分"
+                    android:textColor="@color/color_9999999"
+                    android:textSize="12.0dip" />
+
+                <TextView
+                    android:id="@+id/textview_max_fenshu"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.0dip"
+                    android:layout_weight="1.0"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="3.0dip"
+                    android:text="0"
+                    android:textColor="@color/color_333333"
+                    android:textSize="15.0dip"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.udit.bankexam.view.ShadowContainer>
+
+    <com.udit.bankexam.view.ShadowContainer
+        android:id="@+id/title3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title2"
+        android:layout_marginLeft="23.0dip"
+        android:layout_marginRight="23.0dip"
+        app:containerCornerRadius="4.0dip"
+        app:containerDeltaLength="12.0dip"
+        app:containerShadowColor="#c8dbdbdb"
+        app:containerShadowRadius="8.0dip"
+        app:deltaX="0.0dip"
+        app:deltaY="4.0dip">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="65.0dip"
+            android:background="@drawable/shape_4_corner_white_bg"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="20.0dip"
+                android:layout_weight="1.0"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.0dip"
+                    android:layout_weight="1.0"
+                    android:gravity="bottom|center"
+                    android:paddingBottom="3.0dip"
+                    android:text="答题数"
+                    android:textColor="@color/color_9999999"
+                    android:textSize="12.0dip" />
+
+                <TextView
+                    android:id="@+id/textview_tishu_yizuo"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.0dip"
+                    android:layout_weight="1.0"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="3.0dip"
+                    android:text="0道"
+                    android:textColor="@color/color_333333"
+                    android:textSize="15.0dip"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="20.0dip"
+                android:layout_weight="1.0"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.0dip"
+                    android:layout_weight="1.0"
+                    android:gravity="bottom|center"
+                    android:paddingBottom="3.0dip"
+                    android:text="正确率"
+                    android:textColor="@color/color_9999999"
+                    android:textSize="12.0dip" />
+
+                <TextView
+                    android:id="@+id/textview_tishu_zhenquelue"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.0dip"
+                    android:layout_weight="1.0"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="3.0dip"
+                    android:text="0%"
+                    android:textColor="@color/color_333333"
+                    android:textSize="15.0dip"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.udit.bankexam.view.ShadowContainer>
+
+    <com.udit.bankexam.view.ShadowContainer
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title3"
+        android:layout_marginLeft="23.0dip"
+        android:layout_marginRight="23.0dip"
+        app:containerCornerRadius="4.0dip"
+        app:containerDeltaLength="12.0dip"
+        app:containerShadowColor="#c8dbdbdb"
+        app:containerShadowRadius="8.0dip"
+        app:deltaX="0.0dip"
+        app:deltaY="4.0dip">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="65.0dip"
+            android:background="@drawable/shape_4_corner_white_bg"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="20.0dip"
+                android:layout_weight="1.0"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.0dip"
+                    android:layout_weight="1.0"
+                    android:gravity="bottom|center"
+                    android:paddingBottom="3.0dip"
+                    android:text="答对题数"
+                    android:textColor="@color/color_9999999"
+                    android:textSize="12.0dip" />
+
+                <TextView
+                    android:id="@+id/textview_tishu_zheque"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.0dip"
+                    android:layout_weight="1.0"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="3.0dip"
+                    android:text="0"
+                    android:textColor="@color/color_333333"
+                    android:textSize="15.0dip"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="20.0dip"
+                android:layout_weight="1.0"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.0dip"
+                    android:layout_weight="1.0"
+                    android:gravity="bottom|center"
+                    android:paddingBottom="3.0dip"
+                    android:text="答错题数"
+                    android:textColor="@color/color_9999999"
+                    android:textSize="12.0dip" />
+
+                <TextView
+                    android:id="@+id/textview_tishu_cuowu"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.0dip"
+                    android:layout_weight="1.0"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="3.0dip"
+                    android:text="0"
+                    android:textColor="@color/color_333333"
+                    android:textSize="15.0dip"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.udit.bankexam.view.ShadowContainer>
+</RelativeLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_container"
+    android:layout_width="fill_parent"
+    android:layout_height="120.0dip"
+    android:orientation="vertical">
+
+    <com.udit.bankexam.view.CustomFiveAngleImg
+        android:id="@+id/img"
+        android:layout_width="120.0dip"
+        android:layout_height="95.0dip"
+        android:layout_marginLeft="12.0dip"
+        android:layout_marginTop="15.0dip"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/text_mk_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="11.0dip"
+        android:layout_marginTop="16.0dip"
+        android:layout_marginRight="12.0dip"
+        android:layout_toRightOf="@+id/img"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingBottom="5.0dip"
+        android:text="测试"
+        android:textColor="@color/color_343434"
+        android:textSize="15.0dip" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="20.0dip"
+        android:layout_above="@+id/time_layout"
+        android:layout_marginLeft="11.0dip"
+        android:layout_marginBottom="8.0dip"
+        android:layout_toRightOf="@+id/img">
+
+        <TextView
+           android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="center_vertical"
+            android:text="报名人数："
+            android:textColor="@color/color_9a9a9a"
+            android:textSize="12.0dip" />
+
+        <TextView
+         android:id="@+id/text_mk_baoming"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_toRightOf="@+id/tv"
+            android:gravity="center_vertical"
+            android:text="0"
+            android:textColor="@color/color_343434"
+            android:textSize="12.0dip" />
+    </RelativeLayout>
+
+    <LinearLayout
+      android:id="@+id/time_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/line"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="11.0dip"
+        android:layout_marginBottom="10.0dip"
+        android:layout_toRightOf="@+id/img"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="活动时间："
+            android:textColor="@color/color_9a9a9a"
+            android:textSize="12.0dip" />
+
+        <TextView
+            android:id="@+id/text_mk_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_9a9a9a"
+            android:textSize="12.0dip" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/line"
+        style="@style/style_view_all"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0.5dip" />
+</RelativeLayout>

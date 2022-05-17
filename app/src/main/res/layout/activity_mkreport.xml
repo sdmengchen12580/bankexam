@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/item_top_data_return" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="9.0"
+        android:background="@color/white"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="140.0dip"
+                android:background="@color/white"
+                android:paddingRight="20.0dip"
+                android:paddingBottom="40.0dip">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="20.0dip"
+                    android:layout_marginTop="20.0dip"
+                    android:text="模考分数："
+                    android:textColor="@color/color_444444"
+                    android:textSize="14.0sp" />
+
+                <TextView
+                   android:id="@+id/textview_fenshu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="bottom"
+                    android:text="0"
+                    android:textColor="@color/color_top"
+                    android:textSize="50.0sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/textview_fenshu"
+                    android:layout_toRightOf="@+id/textview_fenshu"
+                    android:text="分"
+                    android:textColor="@color/color_top"
+                    android:textSize="14.0sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip"
+                android:background="@color/color_9999999" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="60.0dip"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical"
+                    android:paddingLeft="10.0dip">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:text="模考最高分"
+                        android:textColor="#ff82a1b7"
+                        android:textSize="14.0sp" />
+
+                    <TextView
+                     android:id="@+id/textview_max_fenshu"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:textColor="@color/color_444444"
+                        android:textSize="14.0sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical"
+                    android:paddingLeft="10.0dip"
+                    android:paddingRight="10.0dip">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:text="模考平均分"
+                        android:textColor="#ff82a1b7"
+                        android:textSize="14.0sp" />
+
+                    <TextView
+                       android:id="@+id/textview_avg_fenshu"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:textColor="@color/color_444444"
+                        android:textSize="14.0sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical"
+                    android:paddingRight="10.0dip">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:text="已击败考生"
+                        android:textColor="#ff82a1b7"
+                        android:textSize="14.0sp" />
+
+                    <TextView
+                        android:id="@+id/textview_jipai"
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.0dip"
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:textColor="@color/color_444444"
+                        android:textSize="14.0sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip"
+                android:background="@color/color_9999999" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="100.0dip"
+                android:background="@color/color_back"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="20.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:text="考试情况："
+                    android:textColor="@color/color_444444"
+                    android:textSize="14.0sp" />
+
+                <TextView
+                   android:id="@+id/textview_kaoshi_qingkuang"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="20.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:layout_marginRight="20.0dip"
+                    android:textColor="@color/color_444444"
+                    android:textSize="14.0sp" />
+
+                <TextView
+                    android:id="@+id/textview_kaoshi_time"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="20.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:layout_marginRight="20.0dip"
+                    android:textColor="@color/color_444444"
+                    android:textSize="14.0sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip"
+                android:background="@color/color_9999999" />
+
+            <ListView
+                android:id="@+id/tixing_listview"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:cacheColorHint="@android:color/transparent"
+                android:childDivider="@color/white"
+                android:divider="@color/white"
+                android:dividerHeight="0.0dip"
+                android:groupIndicator="@null"
+                android:listSelector="@android:color/transparent"
+                android:scrollbars="none" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip"
+                android:background="@color/color_9999999" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="20.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:text="答题卡："
+                    android:textColor="@color/color_444444"
+                    android:textSize="14.0sp" />
+
+                <com.udit.frame.common.flowlayout.FlowLayout
+                    android:id="@+id/flow_dtk"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10.0dip"
+                    android:background="@color/white" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="0.9"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textview_jx_btn"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:background="@color/color_top"
+            android:gravity="center"
+            android:text="错题解析"
+            android:textColor="@color/white"
+            android:textSize="14.0sp" />
+
+        <View
+            android:layout_width="1.0dip"
+            android:layout_height="fill_parent"
+            android:background="@color/white" />
+
+        <TextView
+            android:id="@+id/textview_jx_all_btn"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:background="@color/color_top"
+            android:gravity="center"
+            android:text="全部解析"
+            android:textColor="@color/white"
+            android:textSize="14.0sp" />
+    </LinearLayout>
+</LinearLayout>

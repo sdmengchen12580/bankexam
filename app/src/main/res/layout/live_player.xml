@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_live_root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ff585c68"
+    android:padding="0.0dip">
+
+    <com.duobeiyun.widget.JYScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:fillViewport="true">
+
+        <RelativeLayout
+           android:id="@+id/rl_in_root"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <com.duobeiyun.widget.DuobeiNativeView
+                android:id="@+id/drawView"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
+
+            <RelativeLayout
+                android:id="@+id/pageLayout"
+                android:layout_width="80.0dip"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="#21000000"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/pageRule"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="/"
+                    android:textColor="#ffffffff"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/totalPage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8.0dip"
+                    android:layout_toRightOf="@+id/pageRule"
+                    android:text="0"
+                    android:textColor="#ffffffff" />
+
+                <TextView
+                    android:id="@+id/currentPage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8.0dip"
+                    android:layout_toLeftOf="@+id/pageRule"
+                    android:text="0"
+                    android:textColor="#ffffffff" />
+            </RelativeLayout>
+
+            <RelativeLayout
+               android:id="@+id/onlineCountLayout"
+                android:layout_width="120.0dip"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#21000000"
+                android:visibility="gone">
+
+                <TextView
+                  android:id="@+id/onlineCountText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:textColor="#ffffffff" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </com.duobeiyun.widget.JYScrollView>
+</RelativeLayout>

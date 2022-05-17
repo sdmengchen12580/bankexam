@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">银行易考</string>
+
+    <string name="str_exam_qingkuang">总答题时间：%1$s</string>
+
+    <string name="string_leijiqiandao">连续签到%1$s 天</string>
+
+    <string name="string_mk_ksqingkuang">共%1$s道题，答对%2$s题，答错%3$s题，正确率%4$s</string>
+
+    <string name="str_video_exam_num">%1$s道题</string>
+    <string name="str_video_exam_total">(%1$s/%2$s)</string>
+    <string name="pay_result_callback_msg">微信支付结果：%s</string>
+    <string name="str_exam_ok_daan">正确答案是：%1$s &#160;&#160;&#160;&#160; 用时：%2$s</string>
+    <string name="mediacontroller_play_pause">Play/Pause</string>
+    <item name="node" type="id"></item>
+    <item name="node_postion" type="id"></item>
+    <string-array name="sp_selcol">
+        <item>白色</item>
+        <item>红色</item>
+        <item>绿色</item>
+        <item>蓝色</item>
+        <item>黄色</item>
+        <item>紫色</item>
+        <item>黑色</item>
+    </string-array>
+    <string-array name="sp_fontsize">
+        <item>24</item>
+        <item>18</item>
+        <item>16</item>
+    </string-array>
+    <string-array name="sp_fontmode">
+        <item>滚动</item>
+        <item>顶部</item>
+        <item>底部</item>
+    </string-array>
+
+    <string name="string_about">
+        银行易考APP是一款专为打算参加银行校招考试的人员设计开发的应用，银行易考APP有大量真题、智能题库、模拟考试、视频课程及直播课程，并将银行招聘信息汇总成资讯提供给广大考生。
+    </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

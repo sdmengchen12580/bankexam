@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.udit.bankexam">
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission
+        android:name="android.permission.WRITE_APN_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission
+        android:name="android.permission.CHANGE_CONFIGURATION"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="com.huawei.systemmanager.permission.ACCESS_INTERFACE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"
+        tools:node="remove"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission
+        android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_ADDED" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_CHANGED" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_INSTALL" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_REPLACED" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.newui.UserXyActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar"/>
+        <activity
+            android:name=".ui.newui.yaoqing.YaoqingDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.start">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.newui.YinSiActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.newui.quessearch.SearchQuesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.newui.ques.MyQuesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.newui.ques.WantQuesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.newui.ques.QuesDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.newui.yaoqing.YaoQingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".WelcomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.video.AllVideoShowActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.user.LoginActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.user.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.user.WxRegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.user.WxRegisterTwoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.user.FindPwdOneActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.user.FindPwdTwoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.home.HomeActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="com.udit.bankexam.ui.home.homeactivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.zhibo.KeChengDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.zhibo.DateActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.exam.ExamActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.sreach.ExamSreachActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.sreach.ExamSreachShouCangActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.video.VideoTypeOneActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.newui.MyKcActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.video.VideoTypeTwoActivityNew"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.video.VideoTypeTwoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.user.UserInfoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.exam_day.ExamDayActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.exam_day.ExamDayDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.exam_robot.ExamRobotActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.exam_robot_pract.ExamRobotPractActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.exam_year.ExamYearActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.exam_sole.ExamSoleActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.exam_mk.ExamMkActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.exam_report_data.ExamReportDataActvity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.user.AboutActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.exam_report_data.ExamReportDataDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.exam_err.ExamErrActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.exam_err.ExamErrDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.exam_err.ExamErrTitleActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.exam_err.NoteActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.exam_mk.ExamMkDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.exam_mk.ExamMkReportDataActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.exam_data_history.ExamDataHistoryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.exam_notebook.ExamNoteBookActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.exam_collection.ExamCollectionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.user.ModiftyPwdActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.user.ModiftyNameActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.user.MessageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar">
+            <intent-filter>
+                <action android:name=".ui.user.messageactivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.zhibo.ZhiboLiebiaoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.exam.ExamListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.MyWebActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.exam_err.ExamHomeErrActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.exam_day.ExamDayCalenderActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.zixun.ZiXunActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.zixun.ZiXunListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.zixun.ZiXunDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.MyWebUriActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.exam.JiuCuoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.exam_day.QinDaoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.other.SettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.video.VideoActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".ui.video.VideoInfoActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.exam_data_history.ExamHomeHistoryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.user.shouhuoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name=".ui.pay.PaySelectActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.translatebar" />
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="keyboardHidden|navigation|orientation"
+            android:exported="false"
+            android:screenOrientation="behind" />
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="keyboardHidden|navigation|orientation"
+            android:exported="false"
+            android:screenOrientation="behind" />
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent1106123153" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="wxf41ad321ed049ffa" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.udit.bankexam.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <receiver android:name=".notify.NotificationBroadcast" />
+        <receiver
+            android:name=".notify.MyNetBroadCast"
+            android:label="NetWorkConnection">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".notify.NotificationService" />
+        <service android:name=".notify.MyPushIntentService" />
+        <service android:name=".notify.MyNotificationService" />
+
+        <activity
+            android:name="com.udit.frame.common.baseImage.SpaceImageDetailActivity"
+            android:screenOrientation="portrait" />
+
+        <service android:name="com.liulishuo.filedownloader.services.FileDownloadService$SharedMainProcessService" />
+        <service
+            android:name="com.liulishuo.filedownloader.services.FileDownloadService$SeparateProcessService"
+            android:process=":filedownloader" />
+
+        <activity
+            android:name="com.duobeiyun.def.controller.DefLiveActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="adjustPan"
+            tools:replace="android:configChanges" />
+        <activity
+            android:name="com.duobeiyun.def.controller.DefOfflinePlaybackActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            tools:replace="android:configChanges" />
+        <activity
+            android:name="com.duobeiyun.def.controller.DefPlaybackActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            tools:replace="android:configChanges" />
+        <activity
+            android:name="com.duobeiyun.def.controller.DefNativePlaybackActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            tools:replace="android:configChanges" />
+
+        <service
+            android:name="com.taobao.accs.ChannelService"
+            android:exported="true"
+            android:process=":channel">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.SERVICE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.ELECTION" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.taobao.accs.data.MsgDistributeService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.RECEIVE" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="com.taobao.accs.EventReceiver"
+            android:process=":channel">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.taobao.accs.ServiceReceiver"
+            android:process=":channel">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.COMMAND" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.START_FROM_AGOO" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.taobao.accs.ChannelService$KernelService"
+            android:process=":channel" />
+        <service
+            android:name="org.android.agoo.accs.AgooService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.RECEIVE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.umeng.message.UmengIntentService"
+            android:exported="true"
+            android:process=":channel">
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.RECEIVE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.umeng.message.XiaomiIntentService"
+            android:exported="true"
+            android:process=":channel">
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.RECEIVE" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="com.taobao.agoo.AgooCommondReceiver"
+            android:exported="true"
+            android:process=":channel">
+            <intent-filter>
+                <action android:name="com.udit.bankexam.intent.action.COMMAND" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.umeng.message.UmengMessageIntentReceiverService"
+            android:exported="true"
+            android:process=":channel">
+            <intent-filter>
+                <action android:name="org.android.agoo.client.MessageReceiverService" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="com.umeng.message.NotificationProxyBroadcastReceiver"
+            android:exported="false" />
+
+        <service
+            android:name="com.umeng.message.UmengMessageCallbackHandlerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.umeng.messge.registercallback.action" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.umeng.message.enablecallback.action" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.umeng.message.disablecallback.action" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.umeng.message.message.handler.action" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.umeng.message.UmengDownloadResourceService"
+            android:exported="false" />
+
+        <provider
+            android:name="com.umeng.message.provider.MessageProvider"
+            android:authorities="com.udit.bankexam.umeng.message"
+            android:exported="false">
+            <grant-uri-permission android:pathPattern=".*" />
+        </provider>
+    </application>
+
+</manifest>

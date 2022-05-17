@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/layout_progress_img"
+        android:layout_width="40.0dip"
+        android:layout_height="40.0dip"
+        android:layout_gravity="center"
+        android:layout_marginTop="10.0dip"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/img_roate_load" />
+
+    <TextView
+        android:id="@+id/layout_progress_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10.0dip"
+        android:layout_marginBottom="9.0dip"
+        android:maxLines="1"
+        android:textColor="#ff999999"
+        android:textSize="15.0dip" />
+</LinearLayout>

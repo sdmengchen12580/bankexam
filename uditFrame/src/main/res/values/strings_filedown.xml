@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="strings_filedown_downing">正在下载</string>
+    <string name="strings_filedown_cancel">取消</string>
+</resources>

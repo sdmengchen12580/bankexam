@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/item_top_return" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip">
+
+        <ImageView
+            android:id="@+id/img_date_left"
+            style="@style/style_date_title_img"
+            android:layout_toLeftOf="@+id/text_data_title"
+            android:src="@mipmap/calendar_btn_arrow_left"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/text_data_title"
+            style="@style/style_date_titl1e"
+            android:text="2017年3月" />
+
+        <ImageView
+            android:id="@+id/img_date_right"
+            style="@style/style_date_title_img"
+            android:layout_toRightOf="@+id/text_data_title"
+            android:src="@mipmap/calendar_btn_arrow_right"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <com.udit.mycalendar.CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:mc_selectColor="@color/color_date_select"
+        app:mc_selectTextColor="@color/color_date_text"
+        app:mc_startsOnSunday="true" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#ffefefef">
+
+        <ListView
+            android:id="@+id/listview_date"
+            style="@style/style_listview_divider_0"
+            android:layout_marginTop="10.0dip"
+            android:background="@color/white" />
+    </RelativeLayout>
+</LinearLayout>

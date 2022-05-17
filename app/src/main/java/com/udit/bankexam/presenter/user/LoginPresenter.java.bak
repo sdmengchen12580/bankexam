@@ -1,0 +1,79 @@
+package com.udit.bankexam.presenter.user;
+
+import java.util.HashMap;
+import java.util.List;
+
+import com.udit.bankexam.bean.MsgBean;
+import com.udit.bankexam.bean.UserBean;
+import com.udit.bankexam.constant.IHTTP;
+import com.udit.bankexam.constant.Constant.Params;
+import com.udit.bankexam.utils.JsonUtils;
+import com.udit.bankexam.view.user.LoginView;
+import com.udit.bankexam.view.user.LoginView.View;
+import com.udit.frame.freamwork.http.IHttpResponseListener;
+import com.udit.frame.utils.JsonUtil;
+import com.udit.frame.utils.MyLogUtils;
+import com.udit.frame.utils.ProgressUtils;
+
+import android.content.Context;
+
+public class LoginPresenter extends LoginView.Presenter
+{
+    private final String TAG = this.getClass().getSimpleName();
+    
+    public LoginPresenter(View mView)
+    {
+        super(mView);
+    }
+
+    @Override
+    public void login(Context mContext,String phone, String pwd)
+    {
+        try
+        {
+            ProgressUtils.showProgressDlg("登录中", mContext);
+            HashMap<String, String> map_params = new HashMap<>();
+            map_params.put(Params.ACTION, IHTTP.DOLOGIN);
+            map_params.put(Params.MOBILE, phone);
+            map_params.put(Params.PASS, pwd);
+            setHttp(map_params, IHTTP.PROJECT, new IHttpResponseListener()
+            {
+                
+                @Override
+                public void onError(String errStr)
+                {
+                    mView.loginErr(null);
+                    ProgressUtils.stopProgressDlg();
+                }
+                
+                @Override
+                public void doHttpResponse(String json)
+                {
+                    UserBean bean =   JsonUtils.parseUser(json);
+                    if(bean!=null)
+                    {
+                        mView.loginOk(bean);
+                    }
+                    else
+                    {
+                        List<MsgBean> list = JsonUtil.jsonToListByArrayNoSucess(json,MsgBean.class);
+                        if(list!=null && list.size()>0)
+                        {
+                            mView.loginErr(list.get(0).getMsg());
+                        }
+                        else
+                            mView.loginErr(null);
+                    }
+                    ProgressUtils.stopProgressDlg();
+                }
+            });
+        }
+        catch (Exception e)
+        {
+            MyLogUtils.e(TAG, e.getMessage());
+            mView.loginErr("网络异常，登录失败");
+            ProgressUtils.stopProgressDlg();
+        }
+    }
+
+}

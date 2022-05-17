@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="65dp">
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12.5dp"
+        android:layout_marginTop="13dp"
+        android:text="邀请15996395211注册成功！"
+        android:textColor="#333333"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="12.5dp"
+        android:layout_marginBottom="11dp"
+        android:text="2020-09-21 11：22：33"
+        android:textColor="#999999"
+        android:textSize="12dp" />
+
+    <View
+        android:layout_alignParentBottom="true"
+        android:id="@+id/tv_line"
+        style="@style/style_view_all" />
+
+</RelativeLayout>

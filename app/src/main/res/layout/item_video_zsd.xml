@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+      android:id="@+id/textview_zsd_title"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="10.0dip"
+        android:text="知识点12312313"
+        android:textStyle="bold"
+        android:textColor="@color/back"
+        android:textSize="14dp" />
+
+    <WebView
+        android:id="@+id/textview_zsd_content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/drawable_video_zsd"
+        android:overScrollMode="never"
+        android:padding="5.0dip"
+        android:scrollbars="none"
+        android:text="测试测试测试测试测试测试测试测试试测试测试试测试测试试测试测试试测试测试试测试测试测试测试测试测试测试测试"
+        android:textColor="@color/color_8c9fb0"
+        android:textSize="12.0sp" />
+</LinearLayout>

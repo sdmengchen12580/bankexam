@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".ui.newui.ques.QuesFragment">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="25dp">
+
+        <LinearLayout
+            android:layout_width="342dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="12.5dp"
+            android:layout_marginRight="10.5dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_12_5_corner_fofofo_bg"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="11dp"
+                android:src="@mipmap/nav_icon_search_grey" />
+
+            <TextView
+                android:id="@+id/et_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="搜索问题"
+                android:maxLines="1"
+                android:textColor="@color/color_333333"
+                android:textColorHint="@color/color_9999999"
+                android:textSize="14dp" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="12dp">
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/img_tiwen_bg" />
+
+            <TextView
+                android:id="@+id/tv_my_ques"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="我的\n问题"
+                android:textColor="@color/white"
+                android:textSize="9dp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <com.udit.bankexam.view.AmityHorizontalEatScrollView
+        android:id="@+id/hsl_nearshow"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <com.udit.bankexam.view.MyGridView
+                android:id="@+id/mgv_nearshow"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:horizontalSpacing="12dp"
+                android:listSelector="@color/transparent" />
+        </LinearLayout>
+
+    </com.udit.bankexam.view.AmityHorizontalEatScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_shops"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/img_tiwen"
+            android:layout_width="49.5dp"
+            android:layout_height="54.5dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="5.5dp"
+            android:layout_marginBottom="130dp"
+            android:src="@mipmap/img_tiwen" />
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ff000000">
+
+    <Button
+       android:id="@+id/portrait_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10.0dip"
+        android:background="@android:color/transparent"
+        android:drawableLeft="@mipmap/back_arrow"
+        android:drawablePadding="10.0dip"
+        android:gravity="center_vertical"
+        android:paddingLeft="10.0dip"
+        android:text="返回"
+        android:textColor="#ffffff"
+        android:textSize="18.0sp" />
+</RelativeLayout>

@@ -1,0 +1,1 @@
+include ':app', ':viewPagerIndicator', ':uditFrame', ':MyCalendar', ':dbysdk-release', ':Pushlib', ':polyvAndroidSDKGif1.0', 'newapp'

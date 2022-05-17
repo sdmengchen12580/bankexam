@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/item_top_return" />
+
+    <View
+        style="@style/style_view_all"
+        android:layout_alignParentBottom="true" />
+
+    <com.udit.frame.common.pullrefresh.PullToRefreshListView
+       android:id="@+id/pull_zixun"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/app_bg"
+        android:orientation="vertical" />
+</LinearLayout>

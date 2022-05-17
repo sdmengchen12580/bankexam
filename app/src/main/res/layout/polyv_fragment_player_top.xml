@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/top_layout_color_white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/top_layout_height">
+
+        <ImageView
+            android:id="@+id/iv_finish"
+            style="@style/iv_click_commom"
+            android:layout_centerVertical="true"
+            android:src="@drawable/polyv_btn_back" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@+id/iv_finish"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center_horizontal"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="@color/top_text_color_black"
+            android:textSize="@dimen/top_text_size" />
+    </RelativeLayout>
+</LinearLayout>

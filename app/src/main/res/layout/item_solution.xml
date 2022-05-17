@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+       android:id="@+id/rl_solution_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@color/white">
+
+        <com.udit.frame.common.circleImageView.CircleImageView
+           android:id="@+id/img_item_solution_back"
+            android:layout_width="30.0dip"
+            android:layout_height="30.0dip"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/img_efefef" />
+
+        <TextView
+           android:id="@+id/text_solution_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="1"
+            android:textColor="@drawable/shape_text_select"
+            android:textSize="14.0dip" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/img_solution_biaoji"
+        android:layout_width="10.0dip"
+        android:layout_height="10.0dip"
+        android:layout_alignTop="@+id/rl_solution_item"
+        android:layout_alignRight="@+id/rl_solution_item"
+        android:src="@mipmap/home_tips_44x44"
+        android:visibility="gone" />
+</RelativeLayout>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffffff">
+
+    <RelativeLayout
+        android:id="@+id/rl_root"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <RelativeLayout
+       android:id="@+id/chat_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="300.0dip"
+        android:layout_alignParentBottom="true"
+        android:background="#ffeeeef2">
+
+        <include
+          android:id="@+id/chat_tab"
+            layout="@layout/chat_tab"
+            android:layout_width="fill_parent"
+            android:layout_height="48.0dip" />
+
+        <ListView
+          android:id="@+id/chatList"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/chat_tab"
+            android:layout_marginLeft="10.0dip"
+            android:layout_marginTop="10.0dip"
+            android:layout_marginRight="10.0dip"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="5.0dip"
+            android:scrollbars="none" />
+    </RelativeLayout>
+
+    <include
+     android:id="@+id/portrait_navi_layout"
+        layout="@layout/portrait_navi_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="36.0dip" />
+
+    <RelativeLayout
+        android:id="@+id/pptLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/chat_layout"
+        android:layout_below="@+id/portrait_navi_layout"
+        android:background="#ff000000">
+
+        <com.duobeiyun.widget.JYScrollView
+          android:id="@+id/scrollView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:fillViewport="true">
+
+            <com.duobeiyun.widget.DuobeiNativeView
+               android:id="@+id/drawView"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
+        </com.duobeiyun.widget.JYScrollView>
+
+        <com.duobeiyun.widget.JYVideoView
+            android:id="@+id/teacher"
+            android:layout_width="100.0dip"
+            android:layout_height="75.0dip"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true" />
+
+        <com.duobeiyun.widget.MySufaceView
+           android:id="@+id/mysufaceview"
+            android:layout_width="100.0dip"
+            android:layout_height="75.0dip"
+            android:visibility="gone" />
+
+        <RelativeLayout
+           android:id="@+id/rl_portrait_fullScreen"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#33000000"
+            android:paddingTop="12.0dip">
+
+            <ImageButton
+                android:id="@+id/portrait_fullScreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30.0dip"
+                android:layout_marginBottom="20.0dip"
+                android:background="@mipmap/fullscreen" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <include
+      android:id="@+id/landscape_navi_layout"
+        layout="@layout/landscape_navi_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="36.0dip"
+        android:visibility="gone" />
+
+    <ImageButton
+      android:id="@+id/chatSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="16.0dip"
+        android:layout_marginBottom="16.0dip"
+        android:background="@mipmap/comment" />
+
+    <include
+       android:id="@+id/message_input_layout"
+        layout="@layout/message_input_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pptLayout"
+        android:visibility="gone" />
+</RelativeLayout>

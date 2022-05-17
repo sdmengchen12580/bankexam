@@ -1,0 +1,58 @@
+package com.udit.bankexam.presenter.zhibo;
+
+
+import com.udit.bankexam.bean.ZhiboKeChengBean;
+import com.udit.bankexam.constant.Constant;
+import com.udit.bankexam.constant.IHTTP;
+import com.udit.bankexam.view.zhibo.DateView;
+import com.udit.bankexam.view.zhibo.DateView.View;
+import com.udit.frame.freamwork.http.IHttpResponseListener;
+import com.udit.frame.utils.JsonUtil;
+import com.udit.frame.utils.MyLogUtils;
+
+import java.util.HashMap;
+import java.util.List;
+
+public class DatelPresenter extends DateView.Presenter
+{
+    private final String TAG = this.getClass().getSimpleName();
+
+    public DatelPresenter(View mView)
+    {
+        super(mView);
+    }
+
+    @Override
+    public void getZhiboDate(String uid) {
+        HashMap<String,String> map_params = new HashMap<>();
+        try {
+            map_params.put(Constant.Params.ACTION, IHTTP.DOGETSCHEDULE);
+            map_params.put(Constant.Params.UID,uid);
+
+            setHttp(map_params, IHTTP.PROJECT, new IHttpResponseListener() {
+                @Override
+                public void doHttpResponse(String json) {
+                    List<ZhiboKeChengBean> list = JsonUtil.jsonToListByArray(json,ZhiboKeChengBean.class);
+                    if(list!=null && list.size()>0)
+                    {
+                        mView.setZhiboDate(list);
+                    }
+                    else
+                        mView.setZhiboDate(null);
+                }
+
+                @Override
+                public void onError(String errStr) {
+                    MyLogUtils.e(TAG,errStr);
+                    mView.setZhiboDate(null);
+                }
+            });
+        } catch (Exception e) {
+            MyLogUtils.e(TAG,e.getMessage());
+            mView.setZhiboDate(null);
+        }
+
+    }
+
+
+}

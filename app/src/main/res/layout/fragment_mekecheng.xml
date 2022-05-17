@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+       android:id="@+id/ll_kecheng_shoucang"
+        style="@style/style_item_me_ll"
+        android:layout_marginTop="10.0dip"
+        android:visibility="gone">
+
+        <ImageView
+            style="@style/style_item_me_img"
+            android:src="@mipmap/zhibo_icon_collect" />
+
+        <TextView
+            style="@style/style_item_me_text"
+            android:text="我的收藏" />
+
+        <LinearLayout style="@style/style_item_me_child_ll">
+
+            <ImageView style="@style/style_item_me_in_img" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="31.0dip"
+        android:layout_marginTop="1.0dip"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="bottom"
+            android:paddingLeft="9.5dip"
+            android:paddingBottom="2.0dip"
+            android:text="课程列表"
+            android:textColor="@color/color_343434"
+            android:textSize="15.0dip" />
+
+        <LinearLayout style="@style/style_item_me_child_ll">
+
+            <LinearLayout
+                android:id="@+id/ll_kecheng_date"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="15.0dip"
+                    android:layout_height="15.0dip"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="5.0dip"
+                    android:src="@mipmap/img_rl" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_marginRight="13.5dip"
+                    android:gravity="bottom"
+                    android:paddingBottom="3.0dip"
+                    android:text="课程日历"
+                    android:textColor="@color/color_666666"
+                    android:textSize="13.0dip" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ListView
+       android:id="@+id/listview_kecheng"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10.0dip"
+        android:divider="#00000000"
+        android:dividerHeight="0.0dip"
+        android:overScrollMode="never"
+        android:scrollbars="none" />
+
+    <RelativeLayout
+        android:id="@+id/rl_no_date"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="141.25dip"
+            android:layout_height="104.099976dip"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="82.0dip"
+            android:src="@mipmap/img_no_kec_bg" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="33.0dip"
+            android:text="暂无课程"
+            android:textColor="@color/color_9a9a9a"
+            android:textSize="15.0dip" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout
+        android:id="@+id/chat_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="280.0dip"
+        android:layout_alignParentBottom="true"
+        android:background="#ffeeeef2">
+
+        <include
+            android:id="@+id/chat_tab"
+            layout="@layout/chat_tab"
+            android:layout_width="fill_parent"
+            android:layout_height="48.0dip" />
+
+        <ListView
+            android:id="@+id/chatList"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/chat_tab"
+            android:layout_marginLeft="10.0dip"
+            android:layout_marginTop="10.0dip"
+            android:layout_marginRight="10.0dip"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="5.0dip"
+            android:scrollbars="none" />
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/portrait_navi_layout"
+        layout="@layout/portrait_navi_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="36.0dip" />
+
+    <RelativeLayout
+        android:id="@+id/pptLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/chat_layout"
+        android:layout_below="@+id/portrait_navi_layout"
+        android:background="#ff000000">
+
+        <com.duobeiyun.widget.JYScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:fillViewport="true">
+
+            <com.duobeiyun.widget.DuobeiNativeView
+                android:id="@+id/drawView"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:clickable="true" />
+        </com.duobeiyun.widget.JYScrollView>
+
+        <TextView
+            android:id="@+id/portrait_playback_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10.0dip"
+            android:layout_marginRight="10.0dip"
+            android:background="@drawable/playback_speed_bg"
+            android:clickable="true"
+            android:text="1.0倍速"
+            android:textColor="#ffffff"
+            android:textSize="12.0sp" />
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/landscape_navi_layout"
+        layout="@layout/landscape_navi_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="36.0dip"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/portrait_playback_control_layout"
+        layout="@layout/portrait_playback_control_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="60.0dip"
+        android:layout_alignBottom="@+id/pptLayout" />
+
+    <include
+        android:id="@+id/landscape_playback_control_layout"
+        layout="@layout/landscape_playback_control_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="60.0dip"
+        android:layout_alignBottom="@+id/pptLayout" />
+</RelativeLayout>

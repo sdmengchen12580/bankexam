@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="fill_parent"
+    android:layout_height="105.0dip"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="104.0dip"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="10.0dip">
+
+        <com.udit.bankexam.view.CustomFiveAngleImg
+            android:id="@+id/img_picture"
+            android:layout_width="120.0dip"
+            android:layout_height="fill_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@mipmap/pic_default" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:paddingLeft="10.0dip">
+
+            <TextView
+                android:id="@+id/text_typeone"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_marginLeft="3.0dip"
+                android:layout_weight="3.0"
+                android:ellipsize="end"
+                android:gravity="center|left|top"
+                android:maxLines="2"
+                android:paddingTop="7.0dip"
+                android:text="通用通用通用通用用通用用通用用通用用通用通用用通用通用用通用通用通用用通用通用"
+                android:textColor="@color/color_typeone"
+                android:textSize="15.0dip" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_marginBottom="5.0dip"
+                android:layout_weight="1.0"
+                android:orientation="horizontal"
+                android:paddingLeft="5.0dip">
+
+                <TextView
+                  android:id="@+id/video_type_num"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_weight="1.0"
+                    android:text="章节：10"
+                    android:textColor="@color/color_666666"
+                    android:textSize="12.0dip" />
+
+                <TextView
+                    android:id="@+id/video_num"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3.0"
+                    android:text="视频：10"
+                    android:textColor="@color/color_666666"
+                    android:textSize="12.0dip" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        style="@style/style_view_h1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0.5dip" />
+</RelativeLayout>

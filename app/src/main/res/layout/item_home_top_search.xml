@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:id="@+id/ll_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="45.0dip"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <LinearLayout
+       android:id="@+id/ll_kefu"
+        android:layout_width="43.0dip"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="18.0dip"
+            android:layout_height="18.0dip"
+            android:scaleType="center"
+            android:src="@mipmap/img_homefra_kf" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0.0dip"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="9.0dip"
+        android:layout_marginBottom="9.0dip"
+        android:layout_weight="1.0"
+        android:background="@drawable/shape_12_5_corner_fofofo_bg"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="11.699982dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="11.0dip"
+            android:layout_marginRight="11.0dip"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/nav_icon_search_grey" />
+
+        <EditText
+            android:id="@+id/edit_top_sreach"
+            style="@style/edit_sreach_home"
+            android:hint="搜索题目"
+            android:singleLine="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_message"
+        android:layout_width="37.0dip"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="18.0dip"
+            android:layout_height="18.0dip"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/img_home_clock" />
+    </LinearLayout>
+</LinearLayout>

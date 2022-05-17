@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.start" parent="@style/AppTheme">
+        <item name="android:windowBackground">@drawable/drawable_launch_imgshape</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <style name="Theme.translatebar" parent="@style/AppTheme">
+        <!--<item name="android:windowTranslucentStatus">true</item>-->
+    </style>
+
+</resources>

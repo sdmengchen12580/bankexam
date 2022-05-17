@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/rl_bg"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#00000000">
+
+    <LinearLayout
+        android:layout_width="270.0dip"
+        android:layout_height="100.0dip"
+        android:layout_centerInParent="true"
+        android:background="@drawable/shape_15_conrner_solid_ffffff"
+        android:clickable="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="54.5dip"
+            android:gravity="center"
+            android:text="确定退出吗？"
+            android:textColor="@color/color_333333"
+            android:textSize="14.5dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dip"
+            android:background="#ffdbdbdb" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="45.0dip"
+            android:orientation="horizontal">
+
+            <TextView
+               android:id="@+id/tv_cancel"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:text="点错了"
+                android:textColor="#ff568cf4"
+                android:textSize="16.0dip" />
+
+            <TextView
+                android:layout_width="0.5dip"
+                android:layout_height="fill_parent"
+                android:background="#ffdbdbdb" />
+
+            <TextView
+             android:id="@+id/tv_true"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:text="确定退出"
+                android:textColor="#ff568cf4"
+                android:textSize="16.0dip" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

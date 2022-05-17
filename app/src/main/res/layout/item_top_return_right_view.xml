@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="50.0dip"
+    android:background="@color/color_top">
+
+    <ImageView
+        android:id="@+id/img_top_return"
+        android:layout_width="50.0dip"
+        android:layout_height="fill_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="center"
+        android:src="@mipmap/backhevron" />
+
+    <TextView
+        android:id="@+id/text_top_centent"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="测试"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dimen_top_text" />
+
+    <LinearLayout
+        android:id="@+id/ll_kefu"
+        android:layout_width="80.0dip"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_gravity="bottom"
+            android:layout_weight="0.7"
+            android:adjustViewBounds="true"
+            android:scaleType="center"
+            android:src="@mipmap/zhibo_btn_zixun" />
+
+        <TextView
+            android:layout_width="40.0dip"
+            android:layout_height="0.0dip"
+            android:layout_weight="0.4"
+            android:gravity="center|top"
+            android:text="客服"
+            android:textColor="@color/white"
+            android:textSize="10.0sp" />
+    </LinearLayout>
+</RelativeLayout>

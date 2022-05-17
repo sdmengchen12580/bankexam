@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_study_viewpager"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/color_back"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.udit.frame.common.texthtml.HtmlTextView
+              android:id="@+id/text_exam_material"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/white"
+                android:lineSpacingExtra="5.0dip"
+                android:padding="10.0dip"
+                android:textColor="@color/back"
+                android:textSize="14.0sp" />
+
+            <LinearLayout
+                android:id="@+id/ll_exam_content"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:minHeight="40.0dip"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5.0"
+                    android:minHeight="40.0dip"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/text_exam_qtype"
+                        style="@style/style_text_exam_qtype"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/text_exam_content"
+                        style="@style/style_text_exam_content"
+                        android:layout_marginLeft="10.0dip" />
+
+                    <TextView
+                        android:id="@+id/text_exam_qpoint"
+                        style="@style/style_text_exam_content" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_centerInParent="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/text_num_current"
+                            style="@style/style_text_exam_num"
+                            android:text="0" />
+
+                        <TextView
+                            android:id="@+id/text_num_"
+                            style="@style/style_text_exam_num"
+                            android:text="/" />
+
+                        <TextView
+                            android:id="@+id/text_num_max"
+                            style="@style/style_text_exam_num"
+                            android:text="0" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <com.udit.frame.common.texthtml.HtmlTextView
+                android:id="@+id/text_exam"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:lineSpacingExtra="5.0dip"
+                android:padding="10.0dip"
+                android:textColor="@color/text_module_color"
+                android:textSize="14.0sp" />
+
+            <LinearLayout
+                android:id="@+id/flow_options"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <LinearLayout
+                android:id="@+id/ll_jiexi"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:background="@color/color_exam_content_ll"
+                android:orientation="vertical"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip"
+                android:visibility="visible">
+
+                <TextView
+                 android:id="@+id/text_zhengquedan"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20.0dip"
+                    android:gravity="left"
+                    android:text="@string/str_exam_ok_daan"
+                    android:textColor="@color/color_8c9fb0"
+                    android:textSize="14.0sp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20.0dip"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        android:orientation="vertical">
+
+                        <TextView
+                           android:id="@+id/text_num_qbzt"
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.0dip"
+                            android:layout_weight="1.0"
+                            android:background="@drawable/drawable_jieda_night"
+                            android:gravity="center"
+                            android:paddingTop="10.0dip"
+                            android:paddingBottom="10.0dip"
+                            android:text="全站总答题数"
+                            android:textColor="@color/color_444444"
+                            android:textSize="14.0sp" />
+
+                        <TextView
+                         android:id="@+id/text_all_dt"
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.0dip"
+                            android:layout_weight="1.0"
+                            android:background="@drawable/drawable_jieda_night"
+                            android:gravity="center"
+                            android:paddingTop="10.0dip"
+                            android:paddingBottom="10.0dip"
+                            android:text="10"
+                            android:textColor="@color/color_444444"
+                            android:textSize="14.0sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        android:orientation="vertical">
+
+                        <TextView
+                           android:id="@+id/text_num_qbdd"
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.0dip"
+                            android:layout_weight="1.0"
+                            android:background="@drawable/drawable_jieda_night"
+                            android:gravity="center"
+                            android:paddingTop="10.0dip"
+                            android:paddingBottom="10.0dip"
+                            android:text="全站答对数"
+                            android:textColor="@color/color_444444"
+                            android:textSize="14.0sp" />
+
+                        <TextView
+                            android:id="@+id/text_all_dd"
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.0dip"
+                            android:layout_weight="1.0"
+                            android:background="@drawable/drawable_jieda_night"
+                            android:gravity="center"
+                            android:paddingTop="10.0dip"
+                            android:paddingBottom="10.0dip"
+                            android:text="10"
+                            android:textColor="#ff74dcb7"
+                            android:textSize="14.0sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        android:orientation="vertical">
+
+                        <TextView
+                          android:id="@+id/text_num_qbdc"
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.0dip"
+                            android:layout_weight="1.0"
+                            android:background="@drawable/drawable_jieda_night"
+                            android:gravity="center"
+                            android:paddingTop="10.0dip"
+                            android:paddingBottom="10.0dip"
+                            android:text="全站答错数"
+                            android:textColor="@color/color_444444"
+                            android:textSize="14.0sp" />
+
+                        <TextView
+                           android:id="@+id/text_all_dc"
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.0dip"
+                            android:layout_weight="1.0"
+                            android:background="@drawable/drawable_jieda_night"
+                            android:gravity="center"
+                            android:paddingTop="10.0dip"
+                            android:paddingBottom="10.0dip"
+                            android:text="10"
+                            android:textColor="#ffbb3717"
+                            android:textSize="14.0sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/text_num_qbxx"
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.0dip"
+                            android:layout_weight="1.0"
+                            android:background="@drawable/drawable_jieda_night"
+                            android:gravity="center"
+                            android:paddingTop="10.0dip"
+                            android:paddingBottom="10.0dip"
+                            android:text="易错项"
+                            android:textColor="@color/color_444444"
+                            android:textSize="14.0sp" />
+
+                        <TextView
+                            android:id="@+id/text_all_xx"
+                            android:layout_width="fill_parent"
+                            android:layout_height="0.0dip"
+                            android:layout_weight="1.0"
+                            android:background="@drawable/drawable_jieda_night"
+                            android:gravity="center"
+                            android:paddingTop="10.0dip"
+                            android:paddingBottom="10.0dip"
+                            android:text="A"
+                            android:textColor="#ffbb3717"
+                            android:textSize="14.0sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20.0dip"
+                    android:gravity="left"
+                    android:text="【解析】"
+                    android:textColor="@color/color_8c9fb0"
+                    android:textSize="14.0sp" />
+
+                <com.udit.frame.common.texthtml.HtmlTextView
+                   android:id="@+id/text_jiexi"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10.0dip"
+                    android:lineSpacingExtra="5.0dip"
+                    android:paddingLeft="5.0dip"
+                    android:paddingRight="5.0dip"
+                    android:textColor="@color/color_444444"
+                    android:textSize="14.0sp" />
+
+                <View
+                    style="@style/style_view_h"
+                    android:layout_marginTop="20.0dip"
+                    android:layout_marginBottom="20.0dip"
+                    android:background="@android:color/transparent" />
+
+                <TextView
+                   android:id="@+id/text_biji_bt"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="【笔记】"
+                    android:textColor="@color/color_8c9fb0"
+                    android:textSize="14.0sp" />
+
+                <TextView
+                   android:id="@+id/text_biji"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10.0dip"
+                    android:layout_marginBottom="100.0dip"
+                    android:paddingLeft="5.0dip"
+                    android:paddingRight="5.0dip"
+                    android:text="添加笔记"
+                    android:textColor="#ff2da8f9"
+                    android:textSize="14.0sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

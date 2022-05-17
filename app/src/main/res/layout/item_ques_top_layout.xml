@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="187.0dip">
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="160.0dip"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/img_ques_bg" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/shadow"
+            android:layout_marginBottom="14.0dip"
+            android:gravity="center"
+            android:text="题库"
+            android:textColor="@color/white"
+            android:textSize="16.0dip" />
+
+        <com.udit.bankexam.view.ShadowContainer
+           android:id="@+id/shadow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            app:containerCornerRadius="4.0dip"
+            app:containerDeltaLength="8.0dip"
+            app:containerShadowColor="#78dbdbdb"
+            app:containerShadowRadius="8.0dip"
+            app:deltaX="0.0dip"
+            app:deltaY="3.0dip">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="99.0dip"
+                android:background="@drawable/shape_4_corner_white_bg">
+
+                <LinearLayout
+                   android:id="@+id/ll_djmj"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="29.0dip"
+                        android:layout_height="29.0dip"
+                        android:src="@mipmap/img_new_djmj" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7.0dip"
+                        android:text="独家密卷"
+                        android:textColor="@color/color_343434"
+                        android:textSize="12.0dip" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_ctb"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="29.0dip"
+                        android:layout_height="29.0dip"
+                        android:src="@mipmap/img_ques_ctb" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7.0dip"
+                        android:text="错题本"
+                        android:textColor="@color/color_343434"
+                        android:textSize="12.0dip" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_llxs"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="29.0dip"
+                        android:layout_height="29.0dip"
+                        android:src="@mipmap/img_ques_llxs" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7.0dip"
+                        android:text="练习历史"
+                        android:textColor="@color/color_343434"
+                        android:textSize="12.0dip" />
+                </LinearLayout>
+
+                <LinearLayout
+                   android:id="@+id/ll_znzj"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1.0"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="29.0dip"
+                        android:layout_height="29.0dip"
+                        android:src="@mipmap/img_ques_znzj" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7.0dip"
+                        android:text="智能组卷"
+                        android:textColor="@color/color_343434"
+                        android:textSize="12.0dip" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.udit.bankexam.view.ShadowContainer>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="55.0dip"
+        android:layout_marginLeft="11.5dip"
+        android:gravity="center_vertical"
+        android:paddingBottom="7.0dip"
+        android:text="章节练习"
+        android:textColor="@color/color_343434"
+        android:textSize="16.0dip" />
+</LinearLayout>

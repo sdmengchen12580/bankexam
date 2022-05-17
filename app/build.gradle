@@ -1,0 +1,150 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+
+android {
+    compileSdkVersion 26
+
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
+    defaultConfig {
+        applicationId "com.udit.bankexam"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 28
+        versionName "2.8"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        /*ndk {
+            abiFilters "armeabi","armeabi-v7a";
+        }*/
+    }
+    //,"armeabi-v8a","x86","x86_64"
+
+    //正式包 需要解放这里
+    splits {
+        abi {
+            enable true
+            reset()
+//            include 'armeabi'   //只打 armeabi
+            include 'arm64-v8a'   //只打 armeabi
+            universalApk false //true 打一个通用包，包含全部七个平台
+        }
+    }
+// map for the version code
+    project.ext.versionCodes = ['armeabi': 1, 'armeabi-v7a': 2, 'arm64-v8a': 3, 'mips': 5, 'mips64': 6, 'x86': 8, 'x86_64': 9]
+
+    android.applicationVariants.all { variant ->
+        // assign different version code for each output
+        variant.outputs.each { output ->
+            output.versionCodeOverride =
+                    project.ext.versionCodes.get(output.getFilter(com.android.build.OutputFile.ABI), 0) * 1000000 + android.defaultConfig.versionCode
+        }
+    }
+    //仓库
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            java.srcDirs = ['src/main/java', 'src/main/java-gen']
+        }
+    }
+
+
+    signingConfigs {
+        release {
+            storeFile file("BankExamKeyStore.jks")
+            storePassword "123456"
+            keyAlias "key0"
+            keyPassword "123456"
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            //启用混淆配置
+            minifyEnabled false
+            //Zip代码压缩优化  
+            zipAlignEnabled true
+            //移除无用资源  
+            shrinkResources false
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.release
+            //Zip代码压缩优化  
+            zipAlignEnabled true
+            //移除无用资源  
+            shrinkResources false
+
+        }
+
+    }
+
+    greendao {
+        schemaVersion 10
+        daoPackage 'com.udit.bankexam.db'
+        targetGenDir 'src/main/java'
+
+    }
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation 'com.android.support:appcompat-v7:26.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support:multidex:1.0.1'
+    implementation 'org.greenrobot:greendao:3.2.2'  //fixme 3.2.0
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.liulishuo.filedownloader:library:1.2.2'
+    testImplementation 'junit:junit:4.12'
+    implementation project(':MyCalendar')
+    implementation project(':uditFrame')
+    implementation project(':viewPagerIndicator')
+    implementation files('libs/jikmediaplayer.jar')
+    implementation files('libs/jikmediawidget.jar')
+    implementation files('libs/master-flame-danmaku.jar')
+    implementation files('libs/org.apache.http.legacy.jar')
+    implementation files('libs/relinker-1.2.2.jar')
+    implementation project(':dbysdk-release')
+    implementation files('libs/alipaySingle-20161222.jar')
+    implementation files('libs/hellocharts-library-1.5.8.jar')
+    implementation project(':polyvAndroidSDKGif1.0')
+    implementation files('libs/polyvDownload2.0.2.jar')
+    implementation files('libs/polyvPlayer2.0.2.jar')
+    implementation files('libs/polyvSub2.0.2.jar')
+    implementation files('libs/polyvUpload2.0.2.jar')
+    implementation files('libs/polyvWidget0.5.1.5.jar')
+    implementation 'com.zhy:percent-support-extends:1.1.1'
+    implementation files('libs/umeng-share-core-7.1.4.jar')
+    implementation files('libs/umeng-share-QQ-full-7.1.4.jar')
+    implementation files('libs/umeng-share-wechat-full-7.1.4.jar')
+    implementation 'com.umeng.umsdk:common:9.4.2'
+    implementation 'com.umeng.umsdk:asms:1.4.1'
+    implementation files('libs/umeng_shareboard_widget.jar')
+    implementation files('libs/open_sdk_r5781.jar')
+    implementation files('libs/wechat-sdk-android-with-mta-1.1.6.jar')
+    implementation project(':Pushlib')
+}

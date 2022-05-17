@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/item_top_return" />
+
+    <View style="@style/style_view_all" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="10.0dip">
+
+        <TextView
+          android:id="@+id/text_mk_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24.0dip"
+            android:layout_marginTop="18.0dip"
+            android:layout_marginRight="24.0dip"
+            android:gravity="center"
+            android:text="模拟考试模拟考试模拟考试模拟考试模拟考试模拟考试模拟考试"
+            android:textColor="@color/color_343434"
+            android:textSize="16.0dip" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="20.0dip"
+            android:layout_gravity="center"
+            android:layout_marginTop="8.0dip"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="活动时间："
+                android:textColor="@color/color_9a9a9a"
+                android:textSize="12.0dip" />
+
+            <TextView
+               android:id="@+id/text_mk_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_343434"
+                android:textSize="12.0dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20.0dip"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_sign_btn"
+                android:layout_width="250.0dip"
+                android:layout_height="40.0dip"
+                android:background="@drawable/shape_20_corner_558cf4_bg"
+                android:gravity="center"
+                android:text="点击报名"
+                android:textColor="@color/white"
+                android:textSize="15.0dip" />
+
+            <TextView
+                android:id="@+id/text_baogao_btn"
+                android:layout_width="250.0dip"
+                android:layout_height="40.0dip"
+                android:layout_marginTop="10.0dip"
+                android:background="@drawable/shape_20_corner_558cf4_bg"
+                android:gravity="center"
+                android:text="查看报告"
+                android:textColor="@color/white"
+                android:textSize="15.0dip"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="7.0dip"
+            android:paddingBottom="5.0dip">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="已有"
+                android:textColor="@color/color_9a9a9a"
+                android:textSize="12.0dip" />
+
+            <TextView
+                android:id="@+id/text_mk_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="2013"
+                android:textColor="#ff568cf4"
+                android:textSize="12.0dip" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="人报名"
+                android:textColor="@color/color_9a9a9a"
+                android:textSize="12.0dip" />
+        </LinearLayout>
+
+        <LinearLayout
+           android:id="@+id/ll_mk_zb"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5.0dip"
+            android:orientation="horizontal"
+            android:paddingTop="8.0dip"
+            android:paddingBottom="8.0dip">
+
+            <TextView
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:gravity="right"
+                android:text="直播课："
+                android:textColor="@color/color_9a9a9a"
+                android:textSize="14.0dip" />
+
+            <TextView
+              android:id="@+id/text_mk_zb_name"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="3.0"
+                android:gravity="left"
+                android:text="直播课名称直播课名称直播课名称直播课名称直播课名称"
+                android:textColor="@color/color_343434"
+                android:textSize="14.0dip" />
+
+            <TextView
+                android:id="@+id/text_mk_zb_goumai"
+                android:layout_width="0.0dip"
+                android:layout_height="25.0dip"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/shape_12_5_stroke_558cf4"
+                android:gravity="center"
+                android:text="点击购买"
+                android:textColor="#ff568cf4"
+                android:textSize="13.0dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_mk_video"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5.0dip"
+            android:orientation="horizontal"
+            android:paddingTop="8.0dip"
+            android:paddingBottom="8.0dip">
+
+            <TextView
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:gravity="right"
+                android:text="视频："
+                android:textColor="@color/color_9a9a9a"
+                android:textSize="14.0dip" />
+
+            <TextView
+                android:id="@+id/text_mk_video_name"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="3.0"
+                android:gravity="left"
+                android:text="直播课名称直播课名称直播课名称直播课名称直播课名称"
+                android:textColor="@color/color_343434"
+                android:textSize="14.0dip" />
+
+            <TextView
+                android:id="@+id/text_mk_video_goumai"
+                android:layout_width="0.0dip"
+                android:layout_height="25.0dip"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/shape_12_5_stroke_558cf4"
+                android:gravity="center"
+                android:text="点击购买"
+                android:textColor="#ff568cf4"
+                android:textSize="13.0dip" />
+        </LinearLayout>
+
+        <LinearLayout
+          android:id="@+id/ll_mk_sj"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5.0dip"
+            android:orientation="horizontal"
+            android:paddingTop="8.0dip"
+            android:paddingBottom="8.0dip">
+
+            <TextView
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:gravity="right"
+                android:text="试卷："
+                android:textColor="@color/color_9a9a9a"
+                android:textSize="14.0dip" />
+
+            <TextView
+               android:id="@+id/text_mk_sj_name"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="3.0"
+                android:gravity="left"
+                android:text="直播课名称直播课名称直播课名称直播课名称直播课名称"
+                android:textColor="@color/color_343434"
+                android:textSize="14.0dip" />
+
+            <TextView
+                android:id="@+id/text_mk_sj_goumai"
+                android:layout_width="0.0dip"
+                android:layout_height="25.0dip"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/shape_12_5_stroke_558cf4"
+                android:gravity="center"
+                android:text="点击购买"
+                android:textColor="#ff568cf4"
+                android:textSize="13.0dip" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <WebView
+        android:id="@+id/webview_mkdetail"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10.0dip"
+        android:background="@color/white"
+        android:overScrollMode="never"
+        android:scrollbars="none" />
+</LinearLayout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".ui.newui.ques.WantQuesActivity">
+
+    <include layout="@layout/item_top_return" />
+
+    <View style="@style/style_view_all" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_marginLeft="13.5dp"
+        android:gravity="center_vertical"
+        android:text="选择分类"
+        android:textColor="@color/color_333333"
+        android:textSize="15dp" />
+
+    <com.udit.bankexam.view.ViewHisGroup
+        android:id="@+id/group"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        app:tagHorizontalSpaces="10dp"
+        app:tagVerticalSpaces="10dp" />
+
+    <EditText
+        android:id="@+id/et_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:hint="请输入标题"
+        android:maxLines="1"
+        android:background="@null"
+        android:textColorHint="@color/color_333333"
+        android:textColor="@color/color_333333"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/et_ques"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginRight="13dp"
+        android:background="@null"
+        android:hint="请描述你的问题，描述越详细 教师回答越具体的哦！"
+        android:textColor="@color/color_333333"
+        android:textColorHint="#999999"
+        android:textSize="13dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tv_tiwen"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/shape_20_corner_558cf4_bg"
+        android:gravity="center"
+        android:text="提交"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
+</LinearLayout>

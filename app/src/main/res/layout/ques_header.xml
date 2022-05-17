@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:orientation="horizontal">
+
+        <com.udit.frame.common.circleImageView.CircleImageView
+            android:id="@+id/img_user"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:src="@mipmap/img_user" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@+id/img_user"
+            android:gravity="center_vertical"
+            android:text="姓名"
+            android:textColor="@color/color_333333"
+            android:textSize="12dp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14.5dp"
+        android:layout_marginRight="14.5dp"
+        android:layout_marginBottom="10dp"
+        android:ellipsize="end"
+        android:text="123123"
+        android:visibility="gone"
+        android:id="@+id/tv_title"
+        android:maxLines="2"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="11dp"
+            android:src="@mipmap/img_comment" />
+
+        <TextView
+            android:id="@+id/tv_commenmtnum"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:gravity="center_vertical"
+            android:text="11"
+            android:textColor="@color/color_333333"
+            android:textSize="13dp" />
+
+        <ImageView
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="24dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/img_liulan" />
+
+        <TextView
+            android:id="@+id/tv_looknum"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:gravity="center_vertical"
+            android:text="11"
+            android:textColor="@color/color_333333"
+            android:textSize="13dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="11.5dp"
+            android:gravity="center_vertical"
+            android:text="2020-09-21 11：22：33"
+            android:textColor="@color/color_9999999"
+            android:textSize="12dp" />
+
+    </LinearLayout>
+
+    <View style="@style/style_view_all" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="14dp"
+        android:layout_marginBottom="20.5dp"
+        android:text="今晚银行易考APP直播频道继续为大家推出备考讲座，江苏 农商行简章解读网申指Lorem ipsum dolor sit ame" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#EFEFEF" />
+
+    <LinearLayout
+        android:paddingTop="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="14dp"
+            android:gravity="center_vertical"
+            android:text="评论专区"
+            android:textColor="#333333"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/tv_comment_num"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="（0条）"
+            android:textColor="@color/color_9999999"
+            android:textSize="13dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

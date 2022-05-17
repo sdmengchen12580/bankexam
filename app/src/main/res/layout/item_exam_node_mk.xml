@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/view_top_line_"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:background="@color/color_back" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:minHeight="50.0dip"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:id="@+id/frame_exam_node"
+                android:layout_width="50.0dip"
+                android:layout_height="fill_parent">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical">
+
+                    <View
+                        android:id="@+id/view_top_line"
+                        android:layout_width="1.0dip"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="center|top"
+                        android:layout_weight="1.0"
+                        android:background="@color/color_exam_node_line"
+                        android:visibility="invisible" />
+
+                    <View
+                        android:id="@+id/view_bottom_line"
+                        android:layout_width="1.0dip"
+                        android:layout_height="0.0dip"
+                        android:layout_gravity="bottom|center"
+                        android:layout_weight="1.0"
+                        android:background="@color/color_exam_node_line"
+                        android:visibility="visible" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/img_node"
+                    android:layout_width="50.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+                    android:scaleType="center"
+                    android:src="@mipmap/content_icon_add" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_exam_go"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_node_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:paddingTop="5.0dip"
+                    android:paddingBottom="5.0dip"
+                    android:text="wdwdwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwwdwd"
+                    android:textColor="@color/color_exam_node_title"
+                    android:textSize="@dimen/text_size_exam_title" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="5.0dip"
+                    android:paddingBottom="5.0dip">
+
+                    <TextView
+                        android:id="@+id/text_exam_done_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="共20道，答对6道，正确率30%"
+                        android:textColor="@color/color_text_exam_num"
+                        android:textSize="12.0sp"
+                        android:visibility="visible" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_bottom_line_"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:background="@color/color_back" />
+</LinearLayout>

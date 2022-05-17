@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/item_top_return" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#ffefefef"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginTop="0.5dp"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="13dp"
+                android:gravity="center_vertical"
+                android:text="头像"
+                android:textColor="@color/color_333333"
+                android:textSize="14dp" />
+
+            <com.udit.frame.common.circleImageView.CircleImageView
+                android:id="@+id/img_user"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8dp"
+                android:layout_toLeftOf="@+id/more"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/img_user" />
+
+            <ImageView
+                android:id="@+id/more"
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="11dp"
+                android:src="@mipmap/calendar_btn_arrow_right" />
+        </RelativeLayout>
+
+        <!--昵称-->
+        <LinearLayout
+            android:id="@+id/ll_modifty_name"
+            style="@style/style_ll_user_info1"
+            android:layout_marginTop="10.0dip">
+
+            <TextView
+                style="@style/style_text_user"
+                android:text="昵称" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/color_666666"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/calendar_btn_arrow_right" />
+        </LinearLayout>
+
+        <View style="@style/style_view_h1" />
+
+        <!--手机号-->
+        <LinearLayout
+            android:id="@+id/ll_phone"
+            style="@style/style_ll_user_info1">
+
+            <TextView
+                style="@style/style_text_user"
+                android:text="手机号" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/color_666666"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/calendar_btn_arrow_right" />
+        </LinearLayout>
+
+        <View style="@style/style_view_h1" />
+
+        <LinearLayout
+            android:id="@+id/ll_modifty_pwd"
+            style="@style/style_ll_user_info"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                style="@style/style_text_user"
+                android:text="修改密码" />
+
+            <LinearLayout style="@style/style_ll_user_in">
+
+                <ImageView style="@style/style_img_user_right" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="50.0dip"
+    android:background="@color/color_top"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0.0dip"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="10.0dip"
+        android:layout_marginTop="10.0dip"
+        android:layout_marginBottom="10.0dip"
+        android:layout_weight="6.0"
+        android:background="@drawable/drawable_background_transparent_in_white_radius_20"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="45.0dip"
+            android:layout_height="fill_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="center"
+            android:src="@mipmap/nav_icon_search_grey" />
+
+        <EditText
+            android:id="@+id/edit_top_sreach"
+            style="@style/style_edit_sreach"
+            android:layout_width="fill_parent"
+            android:hint="搜索题目"
+            android:singleLine="true" />
+
+        <ImageView
+            android:id="@+id/img_delete"
+            android:layout_width="40.0dip"
+            android:layout_height="fill_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="center"
+            android:src="@mipmap/search_icon_delete" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_top_sreach"
+        android:layout_width="0.0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="1.0"
+        android:gravity="center"
+        android:text="搜题"
+        android:textColor="@color/white"
+        android:textSize="12.0sp" />
+</LinearLayout>

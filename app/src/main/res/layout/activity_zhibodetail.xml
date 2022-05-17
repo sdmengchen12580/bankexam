@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffabcdef">
+
+    <RelativeLayout
+       android:id="@+id/commonArea"
+        android:layout_width="fill_parent"
+        android:layout_height="360.0dip"
+        android:layout_alignParentBottom="true" />
+
+    <com.duobeiyun.widget.LivePlayer
+       android:id="@+id/nativeplayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/commonArea"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal" />
+
+    <RelativeLayout
+       android:id="@+id/sendMsgLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="80.0dip"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffffff"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <Button
+         android:id="@+id/sendMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="send" />
+
+        <EditText
+         android:id="@+id/msgEdit"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_toLeftOf="@+id/sendMsg" />
+    </RelativeLayout>
+
+    <com.duobeiyun.widget.JYVideoView
+        android:id="@+id/teacher"
+        android:layout_width="100.0dip"
+        android:layout_height="100.0dip"
+        android:layout_alignLeft="@+id/nativeplayer"
+        android:layout_alignBottom="@+id/nativeplayer"
+        android:scaleType="fitXY" />
+</RelativeLayout>

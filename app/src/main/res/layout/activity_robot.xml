@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/item_top_return" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="fill_parent"
+        android:layout_height="39.0dip"
+        android:background="#ffefefef"
+        android:gravity="center_vertical"
+        android:padding="10.0dip"
+        android:text="历史模考记录"
+        android:textColor="@color/color_9999999"
+        android:textSize="13.0dip"
+        android:visibility="gone" />
+
+    <View style="@style/style_view_h" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/listview_type"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="100dp"
+            android:choiceMode="singleChoice"
+            android:divider="#ff000000"
+            android:dividerHeight="0.0dip"
+            android:overScrollMode="never"
+            android:scrollbars="none" />
+
+        <RelativeLayout
+            android:id="@+id/rl_no_date"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="141.25dip"
+                android:layout_height="104.099976dip"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="98.0dip"
+                android:src="@mipmap/img_no_date" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="30.0dip"
+                android:layout_below="@+id/img"
+                android:layout_marginTop="16.0dip"
+                android:gravity="center"
+                android:text="暂无记录"
+                android:textColor="@color/color_9999999"
+                android:textSize="15.0dip" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bottom_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/textview_robot_btn"
+                android:layout_width="fill_parent"
+                android:layout_height="40.0dip"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="16.0dip"
+                android:layout_marginRight="16.0dip"
+                android:background="@drawable/shape_20_corner_558cf4_bg"
+                android:gravity="center"
+                android:text="重新抽题"
+                android:textColor="@color/white"
+                android:textSize="15.0dip" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

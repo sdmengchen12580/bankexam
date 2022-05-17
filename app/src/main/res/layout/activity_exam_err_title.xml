@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_exam"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip">
+
+        <include layout="@layout/item_top_return" />
+
+        <LinearLayout
+            android:id="@+id/img_exam_gengduo"
+            android:layout_width="44.0dip"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center">
+
+            <com.udit.frame.common.circleImageView.CircleImageView
+                android:layout_width="4.0dip"
+                android:layout_height="4.0dip"
+                android:src="@drawable/graw_doll" />
+
+            <com.udit.frame.common.circleImageView.CircleImageView
+                android:layout_width="4.0dip"
+                android:layout_height="4.0dip"
+                android:layout_marginLeft="2.0dip"
+                android:layout_marginRight="2.0dip"
+                android:src="@drawable/graw_doll" />
+
+            <com.udit.frame.common.circleImageView.CircleImageView
+                android:layout_width="4.0dip"
+                android:layout_height="4.0dip"
+                android:src="@drawable/graw_doll" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager_exam"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="55.0dip"
+            android:background="@color/color_exam_black" />
+
+        <com.udit.bankexam.view.ShadowContainer
+            android:layout_width="fill_parent"
+            android:layout_height="58.0dip"
+            android:layout_alignParentBottom="true"
+            app:containerCornerRadius="4.0dip"
+            app:containerShadowColor="#19dbdbdb"
+            app:deltaX="0.0dip"
+            app:deltaY="3.0dip">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="49.0dip" />
+        </com.udit.bankexam.view.ShadowContainer>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="54.0dip"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:paddingLeft="40.0dip"
+            android:paddingRight="40.0dip">
+
+            <ImageView
+                android:id="@+id/img_exam_cgz"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:adjustViewBounds="true"
+                android:scaleType="center"
+                android:src="@mipmap/img_timu_caozuo" />
+
+            <ImageView
+                android:id="@+id/img_exam_dtk"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:adjustViewBounds="true"
+                android:scaleType="center"
+                android:src="@mipmap/img_datika" />
+
+            <TextView
+                android:id="@+id/img_exam_time"
+                android:layout_width="73.0dip"
+                android:layout_height="25.0dip"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/shape_4_corner_bcc8df_bg"
+                android:gravity="center"
+                android:text="00:00"
+                android:textColor="@color/white"
+                android:textSize="15.0dip" />
+
+            <ImageView
+                android:id="@+id/img_exam_sc"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:adjustViewBounds="true"
+                android:scaleType="center"
+                android:src="@mipmap/img_shoucang" />
+
+            <ImageView
+                android:id="@+id/img_exam_biaoji"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:adjustViewBounds="true"
+                android:scaleType="center"
+                android:src="@mipmap/img_biaoji" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_weight="0.9"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/text_exam_last"
+                style="@style/style_text_exam_next"
+                android:text="上一题" />
+
+            <TextView
+                android:id="@+id/text_exam_centent"
+                style="@style/style_text_exam_centent"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/text_exam_next"
+                style="@style/style_text_exam_next"
+                android:text="下一题" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
