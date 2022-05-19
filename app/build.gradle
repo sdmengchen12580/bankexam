@@ -10,8 +10,8 @@ android {
         applicationId "com.udit.bankexam"
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 28
-        versionName "2.8"
+        versionCode 290000000
+        versionName "2.9"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         /*ndk {
@@ -25,21 +25,21 @@ android {
         abi {
             enable true
             reset()
-//            include 'armeabi'   //只打 armeabi
-            include 'arm64-v8a'   //只打 armeabi
+            include 'armeabi'   //只打 armeabi
+//            include 'arm64-v8a'   //只打 armeabi
             universalApk false //true 打一个通用包，包含全部七个平台
         }
     }
 // map for the version code
     project.ext.versionCodes = ['armeabi': 1, 'armeabi-v7a': 2, 'arm64-v8a': 3, 'mips': 5, 'mips64': 6, 'x86': 8, 'x86_64': 9]
 
-    android.applicationVariants.all { variant ->
-        // assign different version code for each output
-        variant.outputs.each { output ->
-            output.versionCodeOverride =
-                    project.ext.versionCodes.get(output.getFilter(com.android.build.OutputFile.ABI), 0) * 1000000 + android.defaultConfig.versionCode
-        }
-    }
+//    android.applicationVariants.all { variant ->
+//        // assign different version code for each output
+//        variant.outputs.each { output ->
+//            output.versionCodeOverride =
+//                    project.ext.versionCodes.get(output.getFilter(com.android.build.OutputFile.ABI), 0) * 1000000 + android.defaultConfig.versionCode
+//        }
+//    }
     //仓库
     sourceSets {
         main {
