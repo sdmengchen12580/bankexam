@@ -25,8 +25,8 @@ android {
         abi {
             enable true
             reset()
-            include 'armeabi'   //只打 armeabi
-//            include 'arm64-v8a'   //只打 armeabi
+//            include 'armeabi'   //只打 armeabi
+            include 'arm64-v8a'   //只打 armeabi
             universalApk false //true 打一个通用包，包含全部七个平台
         }
     }
