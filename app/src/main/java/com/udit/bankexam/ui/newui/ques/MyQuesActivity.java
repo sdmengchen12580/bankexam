@@ -150,11 +150,17 @@ public class MyQuesActivity extends BaseActivity {
 
                 @Override
                 public void onError(String errStr) {
+                    if (MyQuesActivity.this.isFinishing() || MyQuesActivity.this.isDestroyed()) {
+                        return;
+                    }
                     stopRefresh();
                 }
 
                 @Override
                 public void doHttpResponse(String json) {
+                    if (MyQuesActivity.this.isFinishing() || MyQuesActivity.this.isDestroyed()) {
+                        return;
+                    }
                     stopRefresh();
                     MyLogUtils.e("测试新接口", "json=" + json);
                     Myques bean = new Gson().fromJson(json, Myques.class);
@@ -165,7 +171,7 @@ public class MyQuesActivity extends BaseActivity {
                                         @Override
                                         public void clickItem(String id) {
                                             Bundle bundle = new Bundle();
-                                            bundle.putString("id",id);
+                                            bundle.putString("id", id);
                                             changeAct(bundle, QuesDetailsActivity.class);
                                         }
                                     });
@@ -181,8 +187,8 @@ public class MyQuesActivity extends BaseActivity {
                     } else {
                         adapter.refresh(bean.getData().getResponse().getRows());
                     }
-                    rv.setVisibility(adapter.getItemCount()>0||bean.getData().getResponse().getCount()>0?View.VISIBLE:View.GONE);
-                    rl_no_date.setVisibility(adapter.getItemCount()>0||bean.getData().getResponse().getCount()>0?View.GONE:View.VISIBLE);
+                    rv.setVisibility(adapter.getItemCount() > 0 || bean.getData().getResponse().getCount() > 0 ? View.VISIBLE : View.GONE);
+                    rl_no_date.setVisibility(adapter.getItemCount() > 0 || bean.getData().getResponse().getCount() > 0 ? View.GONE : View.VISIBLE);
                 }
             });
         } catch (Exception e) {

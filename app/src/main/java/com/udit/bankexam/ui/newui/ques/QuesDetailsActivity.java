@@ -303,13 +303,14 @@ public class QuesDetailsActivity extends BaseActivity {
                     MyComment bean = new Gson().fromJson(json, MyComment.class);
                     if (bean != null) {
                         showLongToast("评论成功");
-                        int currentNum = Integer.parseInt(tv_commenmtnum.getText().toString());
-                        currentNum++;
-                        tv_commenmtnum.setText("" + currentNum);
-                        hideKeyboard(et_content);
-                        mIsRefreshing = true;
-                        pageNo = 1;
-                        list(false);
+//                        int currentNum = Integer.parseInt(tv_commenmtnum.getText().toString());
+//                        currentNum++;
+//                        tv_commenmtnum.setText("" + currentNum);
+//                        hideKeyboard(et_content);
+//                        mIsRefreshing = true;
+//                        pageNo = 1;
+//                        list(false);
+                        finish();
                     }
                 }
             });
