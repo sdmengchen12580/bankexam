@@ -84,11 +84,11 @@ public class MyApplication extends BaseApplication {
 
     //友盟
     public static void preInitUmeng() {
-        UMConfigure.setLogEnabled(true);
+//        UMConfigure.setLogEnabled(true);
         //预初始化
         PushHelper.preInit(mContext);
         //同意协议后，初始化
-        String hasAgree = (String) SpUtil.get(mContext, "aggreeurl", "0");
+        String hasAgree = (String) SpUtil.get(mContext, "hasaggreeurl", "0");
         if (hasAgree.equals("1")) {
             new Thread(new Runnable() {
                 @Override

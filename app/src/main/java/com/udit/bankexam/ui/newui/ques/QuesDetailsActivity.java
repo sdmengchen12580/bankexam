@@ -1,7 +1,8 @@
 package com.udit.bankexam.ui.newui.ques;
 
-import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -13,6 +14,7 @@ import android.widget.AbsListView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -27,12 +29,14 @@ import com.udit.bankexam.bean.Zan;
 import com.udit.bankexam.constant.IHTTP;
 import com.udit.bankexam.utils.FastClickUtils;
 import com.udit.bankexam.utils.SpUtil;
+import com.udit.bankexam.view.SubmitCommentPop;
 import com.udit.frame.common.circleImageView.CircleImageView;
 import com.udit.frame.freamwork.activity.BaseActivity;
 import com.udit.frame.freamwork.http.HttpTask;
 import com.udit.frame.freamwork.http.IHttpResponseListener;
 import com.udit.frame.freamwork.http.RequestObject;
 import com.udit.frame.utils.MyLogUtils;
+import com.umeng.socialize.utils.UmengText;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -48,16 +52,18 @@ public class QuesDetailsActivity extends BaseActivity {
     //信息
     private CircleImageView img_user;
     private TextView tv_name;
+    private TextView tv_commtent;
     private TextView tv_title;
     private TextView tv_comment_num;
     private TextView tv_content;
     private TextView tv_commenmtnum;
     private TextView tv_looknum;
-    private EditText et_content;
     private TextView tv_time;
     private int pageNo = 1;
-    private String pageSize = "10";
+    private String pageSize = "100";
     private boolean mIsRefreshing = false;//是否刷新中
+    private SubmitCommentPop submitCommentPop;
+    private PopupWindow popSubmitComment;
 
     @Override
     public void setContentView() {
@@ -67,8 +73,8 @@ public class QuesDetailsActivity extends BaseActivity {
     @Override
     public void initViews(Bundle bundle) {
         id = getIntent().getExtras().getString("id");
-        et_content = (EditText) findViewById(R.id.et_content);
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.refresh);
+        swipeRefreshLayout.setEnabled(false);
         listview = (ListView) findViewById(R.id.listview);
         img_top_return = (ImageView) findViewById(R.id.img_top_return);
         text_top_centent = (TextView) findViewById(R.id.text_top_centent);
@@ -92,7 +98,7 @@ public class QuesDetailsActivity extends BaseActivity {
 
     @Override
     public void initData() {
-        View viewHeader = LayoutInflater.from(getActivity()).inflate(R.layout.ques_header, null, false);
+        final View viewHeader = LayoutInflater.from(getActivity()).inflate(R.layout.ques_header, null, false);
         listview.addHeaderView(viewHeader);
         tv_name = (TextView) viewHeader.findViewById(R.id.tv_name);
         img_user = (CircleImageView) viewHeader.findViewById(R.id.img_user);
@@ -102,18 +108,21 @@ public class QuesDetailsActivity extends BaseActivity {
         tv_commenmtnum = (TextView) viewHeader.findViewById(R.id.tv_commenmtnum);
         tv_looknum = (TextView) viewHeader.findViewById(R.id.tv_looknum);
         tv_comment_num = (TextView) viewHeader.findViewById(R.id.tv_comment_num);
-        et_content.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        tv_commtent = (TextView) viewHeader.findViewById(R.id.tv_commtent);
+        //发表评论
+        tv_commtent.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_SEND) {
-                    if (et_content.getText().toString().trim().equals("")) {
-                        showLongToast("请先输入评论内容");
-                        return true;
-                    }
-                    addQuestionAnswer();
-                    return true;
+            public void onClick(View view) {
+                if (FastClickUtils.isFastClick()) {
+                    return;
                 }
-                return false;
+                submitCommentPop = new SubmitCommentPop(QuesDetailsActivity.this);
+                popSubmitComment = submitCommentPop.showPop(new SubmitCommentPop.ClickCallback() {
+                    @Override
+                    public void commtent(String content) {
+                        addQuestionAnswer(content);
+                    }
+                });
             }
         });
         detail();
@@ -134,12 +143,6 @@ public class QuesDetailsActivity extends BaseActivity {
                 list(false);
             }
         });
-    }
-
-    //隐藏软键盘
-    protected void hideKeyboard(EditText et_chat) {
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(et_chat.getWindowToken(), 0);
     }
 
     private void stopRefresh() {
@@ -283,12 +286,12 @@ public class QuesDetailsActivity extends BaseActivity {
         }
     }
 
-    public void addQuestionAnswer() {
+    public void addQuestionAnswer(String answerContent) {
         try {
             String sessionKey = (String) SpUtil.get(this, "sessionKey", "");
             HashMap<String, String> map_params = new HashMap<>();
             map_params.put("appId", IHTTP.APP_ID);
-            map_params.put("answerContent", et_content.getText().toString().trim());
+            map_params.put("answerContent", answerContent);
             map_params.put("sessionKey", sessionKey);
             map_params.put("ykQuestionId", id);
             setHttp(map_params, IHTTP.QUES_COMMENT_MY, new IHttpResponseListener() {
@@ -303,14 +306,13 @@ public class QuesDetailsActivity extends BaseActivity {
                     MyComment bean = new Gson().fromJson(json, MyComment.class);
                     if (bean != null) {
                         showLongToast("评论成功");
-//                        int currentNum = Integer.parseInt(tv_commenmtnum.getText().toString());
-//                        currentNum++;
-//                        tv_commenmtnum.setText("" + currentNum);
-//                        hideKeyboard(et_content);
-//                        mIsRefreshing = true;
-//                        pageNo = 1;
-//                        list(false);
-                        finish();
+                        int currentNum = Integer.parseInt(tv_commenmtnum.getText().toString());
+                        currentNum++;
+                        tv_commenmtnum.setText("" + currentNum);
+                        mIsRefreshing = true;
+                        pageNo = 1;
+                        list(false);
+//                        finish();
                     }
                 }
             });
@@ -386,7 +388,6 @@ public class QuesDetailsActivity extends BaseActivity {
     //删除
     private void del(String idC, final int positon) {
         try {
-            hideKeyboard(et_content);
             String sessionKey = (String) SpUtil.get(this, "sessionKey", "");
             HashMap<String, String> map_params = new HashMap<>();
             map_params.put("appId", IHTTP.APP_ID);

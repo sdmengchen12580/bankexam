@@ -48,6 +48,8 @@
         </LinearLayout>
 
         <RelativeLayout
+            android:id="@+id/rl_ques_layout"
+            android:visibility="gone"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"

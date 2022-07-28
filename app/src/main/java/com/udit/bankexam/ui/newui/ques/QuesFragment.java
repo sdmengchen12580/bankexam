@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,8 +42,12 @@ import com.udit.frame.freamwork.http.HttpTask;
 import com.udit.frame.freamwork.http.IHttpResponseListener;
 import com.udit.frame.freamwork.http.RequestObject;
 import com.udit.frame.utils.MyLogUtils;
+import com.umeng.commonsdk.debug.D;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -58,12 +63,27 @@ public class QuesFragment extends Fragment {
     private ImageView img_tiwen;
     private TextView tv_my_ques;
     private TextView et_content;
+    private RelativeLayout rl_ques_layout;
     private AmityHorizontalEatScrollView hsl_nearshow;
     private MyGridView mgv_nearshow;
     private ViewPager vp_shops;
     private List<Fragment> fragmentList = new ArrayList<>();
     private int pagerIndex = 0;//记录当前页面的下标
     private EatBottomTypeAdapter eatBottomTypeAdapter;
+
+    //格式时间转long
+    public static long getTimeStamp(String strTime, String strFormat) {
+        strTime = strTime.trim();
+        SimpleDateFormat formatter = new SimpleDateFormat(strFormat);
+        Date theDate = null;
+        try {
+            theDate = formatter.parse(strTime);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return -1;
+        }
+        return theDate.getTime();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -74,6 +94,17 @@ public class QuesFragment extends Fragment {
         img_tiwen = (ImageView) view.findViewById(R.id.img_tiwen);
         hsl_nearshow = (AmityHorizontalEatScrollView) view.findViewById(R.id.hsl_nearshow);
         mgv_nearshow = (MyGridView) view.findViewById(R.id.mgv_nearshow);
+        rl_ques_layout = (RelativeLayout) view.findViewById(R.id.rl_ques_layout);
+        //逻辑
+        Date date = new Date();
+        long longTime = date.getTime();
+        String dateNew = "2022-08-01";
+        long longTimeNew = getTimeStamp(dateNew, "yyyy-MM-dd");
+        Log.e("onCreateView: ", "longTime=" + longTime);
+        Log.e("onCreateView: ", "longTimeNew=" + longTimeNew);
+        if (longTime > longTimeNew) {
+            rl_ques_layout.setVisibility(View.VISIBLE);
+        }
         vp_shops = (ViewPager) view.findViewById(R.id.vp_shops);
         return view;
     }
