@@ -36,6 +36,7 @@ import com.udit.frame.freamwork.http.HttpTask;
 import com.udit.frame.freamwork.http.IHttpResponseListener;
 import com.udit.frame.freamwork.http.RequestObject;
 import com.udit.frame.utils.MyLogUtils;
+import com.umeng.commonsdk.debug.E;
 import com.umeng.socialize.utils.UmengText;
 
 import java.util.ArrayList;
@@ -120,6 +121,7 @@ public class QuesDetailsActivity extends BaseActivity {
                 popSubmitComment = submitCommentPop.showPop(new SubmitCommentPop.ClickCallback() {
                     @Override
                     public void commtent(String content) {
+                        submitCommentPop.dismissPop();
                         addQuestionAnswer(content);
                     }
                 });
@@ -287,13 +289,13 @@ public class QuesDetailsActivity extends BaseActivity {
     }
 
     public void addQuestionAnswer(String answerContent) {
+        String sessionKey = (String) SpUtil.get(this, "sessionKey", "");
+        HashMap<String, String> map_params = new HashMap<>();
+        map_params.put("appId", IHTTP.APP_ID);
+        map_params.put("answerContent", answerContent);
+        map_params.put("sessionKey", sessionKey);
+        map_params.put("ykQuestionId", id);
         try {
-            String sessionKey = (String) SpUtil.get(this, "sessionKey", "");
-            HashMap<String, String> map_params = new HashMap<>();
-            map_params.put("appId", IHTTP.APP_ID);
-            map_params.put("answerContent", answerContent);
-            map_params.put("sessionKey", sessionKey);
-            map_params.put("ykQuestionId", id);
             setHttp(map_params, IHTTP.QUES_COMMENT_MY, new IHttpResponseListener() {
 
                 @Override
@@ -302,22 +304,32 @@ public class QuesDetailsActivity extends BaseActivity {
 
                 @Override
                 public void doHttpResponse(String json) {
-                    MyLogUtils.e("测试新接口", "json=" + json);
                     MyComment bean = new Gson().fromJson(json, MyComment.class);
                     if (bean != null) {
-                        showLongToast("评论成功");
-                        int currentNum = Integer.parseInt(tv_commenmtnum.getText().toString());
-                        currentNum++;
-                        tv_commenmtnum.setText("" + currentNum);
-                        mIsRefreshing = true;
-                        pageNo = 1;
-                        list(false);
-//                        finish();
+                        QuesDetailsActivity.this.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                try {
+                                    showLongToast("评论成功");
+//                                    String stringNum = tv_commenmtnum.getText().toString().trim();
+//                                    if (!stringNum.equals("")) {
+//                                        int currentNum = Integer.parseInt(stringNum);
+//                                        currentNum++;
+//                                        tv_commenmtnum.setText(String.valueOf(currentNum));
+//                                    }
+                                    mIsRefreshing = true;
+                                    pageNo = 1;
+                                    list(false);
+//                                finish();
+                                } catch (Exception e) {
+                                }
+                            }
+                        });
                     }
                 }
             });
         } catch (Exception e) {
-            MyLogUtils.e("测试新接口", e.getMessage());
+            e.printStackTrace();
         }
     }
 

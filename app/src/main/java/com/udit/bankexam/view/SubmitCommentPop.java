@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.udit.bankexam.R;
 import com.udit.bankexam.utils.FastClickUtils;
+import com.umeng.commonsdk.debug.E;
 
 import java.lang.ref.WeakReference;
 
@@ -82,7 +83,6 @@ public class SubmitCommentPop {
                             return;
                         }
                         SubmitCommentPop.this.clickCallback.commtent(et_content.getText().toString().trim());
-                        dismissPop();
                     }
                 }
             });
@@ -139,11 +139,13 @@ public class SubmitCommentPop {
     }
 
     public void dismissPop() {
-        if (popWindow.isShowing()) {
-            popWindow.dismiss();
-            popWindow = null;
-            backNormalPopBg();
-        }
+        try {
+            if (popWindow.isShowing()) {
+                popWindow.dismiss();
+                popWindow = null;
+                backNormalPopBg();
+            }
+        }catch (Exception e){}
     }
 
 

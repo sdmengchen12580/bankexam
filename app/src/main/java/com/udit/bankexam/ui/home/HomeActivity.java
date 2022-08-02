@@ -1,5 +1,7 @@
 package com.udit.bankexam.ui.home;
 
+import com.easefun.polyvsdk.PolyvDevMountInfo;
+import com.easefun.polyvsdk.PolyvSDKClient;
 import com.udit.bankexam.R;
 import com.udit.bankexam.bean.AppParams;
 import com.udit.bankexam.constant.IHTTP;
@@ -8,6 +10,7 @@ import com.udit.bankexam.ui.home.fragment.KeChengFragment;
 import com.udit.bankexam.ui.home.fragment.QuesDataFragment;
 import com.udit.bankexam.ui.home.fragment.VideoFragment_new;
 import com.udit.bankexam.ui.newui.ques.QuesFragment;
+import com.udit.bankexam.ui.video.view.PolyvDemoService;
 import com.udit.bankexam.utils.SpUtil;
 import com.udit.frame.freamwork.http.HttpTask;
 import com.udit.frame.freamwork.http.IHttpResponseListener;
@@ -46,6 +49,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -75,11 +79,52 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements HomeVie
 
     @Override
     public void initViews(Bundle bundle) {
+        initVideo();
         ViewUtils.initView(this, R.id.class);
         String str = (String) SpUtil.get(this, "imgurl", "");
         if (!str.equals("")) {
             setAvatar(str);
         }
+    }
+
+    private void initVideo() {
+       try{
+           PolyvSDKClient client = PolyvSDKClient.getInstance();
+           client.setConfig(Constant.VIDEO.SDK_PASS, Constant.VIDEO.AESKEY, Constant.VIDEO.IV, this);
+           client.initDatabaseService(this);
+           client.startService(this, PolyvDemoService.class);
+           PolyvDevMountInfo.getInstance().init(this, new PolyvDevMountInfo.OnLoadCallback() {
+
+               @Override
+               public void callback() {
+                   if (PolyvDevMountInfo.getInstance().isSDCardAvaiable() == false) {
+                       return;
+                   }
+
+                   StringBuilder dirPath = new StringBuilder();
+                   dirPath.append(PolyvDevMountInfo.getInstance().getSDCardPath()).
+                           append(File.separator).append("polyvdownload");
+                   File saveDir = new File(dirPath.toString());
+                   if (saveDir.exists() == false) {
+                       saveDir.mkdir();
+                   }
+
+                   //如果生成不了文件夹，可能是外部SD卡需要写入特定目录/storage/sdcard1/Android/data/包名/
+                   if (saveDir.exists() == false) {
+                       dirPath.delete(0, dirPath.length());
+                       dirPath.append(PolyvDevMountInfo.getInstance().getSDCardPath())
+                               .append(File.separator).append("Android").append(File.separator).append("data")
+                               .append(File.separator).append("com.udit.bankexam").append(File.separator)
+                               .append("polyvdownload");
+                       saveDir = new File(dirPath.toString());
+                       getExternalFilesDir(null); // 生成包名目录
+                       saveDir.mkdirs();
+                   }
+
+                   PolyvSDKClient.getInstance().setDownloadDir(saveDir);
+               }
+           });
+       }catch (Exception e){}
     }
 
     @Override
@@ -174,7 +219,7 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements HomeVie
         @Override
         public void run() {
             String deviceToken = (String) SpUtil.get(HomeActivity.this, "umeng_token", "");
-            if(deviceToken.equals("")){
+            if (deviceToken.equals("")) {
                 return;
             }
             mPresenter.updateUserToken(bean_user.getUid(), deviceToken);

@@ -220,7 +220,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
     public void setWelcome(final List<String> list) {
         Log.e("测试数据: ", "成功拿到数据");
         this.list = list;
-        String aggreeurl = (String) SpUtil.get(WelcomeActivity.this, "hasaggreeurl", "0");
+        String aggreeurl = (String) SpUtil.get(WelcomeActivity.this, "isaggreeurl", "0");
         if (aggreeurl.equals("0")) {
             showAgreeXy();
         } else {
@@ -235,7 +235,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter> implements W
             @Override
             public void clickTrue() {
                 PushHelper.init(MyApplication.getAppContext());
-                SpUtil.put(WelcomeActivity.this, "hasaggreeurl", "1");
+                SpUtil.put(WelcomeActivity.this, "isaggreeurl", "1");
                 showWelcome();
             }
 
