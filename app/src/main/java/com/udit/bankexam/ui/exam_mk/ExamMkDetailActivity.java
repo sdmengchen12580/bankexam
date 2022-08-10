@@ -8,6 +8,7 @@ import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.udit.bankexam.R;
 import com.udit.bankexam.bean.ExamTitleBean;
@@ -177,7 +178,7 @@ public class ExamMkDetailActivity extends BaseActivity<ExamMkDetailPresneter> im
 
                 String videoPrice = Utils.doubleOutPut(bean_mk.getVidPirce(), 2);
 
-                if (videoPrice.equals("0.00") || videoPrice.equals("0")  || bean_mk.getSpIsGet().equals("是")) {
+                if (videoPrice.equals("0.00") || videoPrice.equals("0") || bean_mk.getSpIsGet().equals("是")) {
                     text_mk_video_goumai.setText("观看视频");
                 } else {
                     text_mk_video_goumai.setText("点击购买");
@@ -213,7 +214,7 @@ public class ExamMkDetailActivity extends BaseActivity<ExamMkDetailPresneter> im
                             && MyDateUtil.compareTime2(MyDateUtil.getDate(MyDateUtil.DATE_FORMAT_2),
                             bean_mk.getExEndDate(), MyDateUtil.DATE_FORMAT_2)) {
                         text_mk_sj_goumai.setTag(examPrice);
-                        if (examPrice.equals("0.00") || examPrice.equals("0")|| bean_mk.getSjIsGet().equals("是")) {
+                        if (examPrice.equals("0.00") || examPrice.equals("0") || bean_mk.getSjIsGet().equals("是")) {
 
                             text_mk_sj_goumai.setText("开始考试");
                         } else {
@@ -307,6 +308,10 @@ public class ExamMkDetailActivity extends BaseActivity<ExamMkDetailPresneter> im
                         String price_exam = (String) text_mk_sj_goumai.getTag();
                         if (price_exam.equals("0")) {
                             mPresenter.saveExam(bean_user.getUid(), bean_mk.getExaminID(), bean_mk.getExName());
+                        }
+                        if (null == bean_mk || null == bean_mk.getExaminID() || bean_mk.getExaminID().equals("")) {
+                            Toast.makeText(ExamMkDetailActivity.this, "当前试卷暂不支持考试", Toast.LENGTH_SHORT).show();
+                            return;
                         }
                         mPresenter.getExam(this, bean_user.getUid(), bean_mk.getExaminID());
                         //  ExamMkReportDataActivity.startExamMkReportDataActivity(getActivity(),bean_mk);

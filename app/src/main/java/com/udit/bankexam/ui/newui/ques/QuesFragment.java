@@ -98,7 +98,7 @@ public class QuesFragment extends Fragment {
         //逻辑
         Date date = new Date();
         long longTime = date.getTime();
-        String dateNew = "2022-08-05";
+        String dateNew = "2022-08-15";
         long longTimeNew = getTimeStamp(dateNew, "yyyy-MM-dd");
         Log.e("onCreateView: ", "longTime=" + longTime);
         Log.e("onCreateView: ", "longTimeNew=" + longTimeNew);
